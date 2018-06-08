@@ -8,7 +8,9 @@ class App extends Component {
     this.state = {
       timeRemaining: {},
       workTime: 1500,
-      isCounting: false
+      breakTime: 300,
+      isCounting: false,
+      onBreak: false
     };
 
     this.timer = 0;
@@ -28,7 +30,12 @@ class App extends Component {
     }
     else {
       clearInterval(this.timer);
-      this.setState({ timeRemaining: this.state.workTime, isCounting: false });
+      if (!this.state.onBreak) {
+        this.setState({ timeRemaining: this.state.workTime, isCounting: false });
+      }
+      else {
+        this.setState({ timeRemaining: this.state.breakTime, isCounting: false });
+      }
     }
   };
 
@@ -38,6 +45,12 @@ class App extends Component {
 
     if (newTimeRem <= 0) {
       clearInterval(this.timer);
+      if (!this.state.onBreak) {
+        this.setState({ timeRemaining: this.state.breakTime, isCounting: false, onBreak: true })
+      }
+      else {
+        this.setState({ timeRemaining: this.state.workTime, isCounting: false, onBreak: false })
+      }
     }
   };
 
@@ -45,7 +58,7 @@ class App extends Component {
     let minutes = Math.floor(timeInSeconds / 60);
     let seconds = Math.floor(timeInSeconds - (minutes * 60));
 
-    if(!timeInSeconds) { return "-:--" }
+    if(!timeInSeconds) { return "--:--" }
 
     minutes = minutes < 10 ? "0" + minutes: minutes;
     seconds = seconds < 10 ? "0" + seconds: seconds;
@@ -60,7 +73,7 @@ class App extends Component {
         <div className="Controller">
           {this.formatTime(this.state.timeRemaining)}
           <br></br>
-          <button type="button" className="btn start" onClick={this.startResetTimer} >{ this.state.isCounting ? "Reset" : "Start" }</button>
+          <button type="button" className="btn start" onClick={this.startResetTimer} >{ this.state.onBreak ? (this.state.isCounting ? "Reset" : "Start Break") : (this.state.isCounting ? "Reset" : "Start Work") }</button>
         </div>
       </div>
     );
