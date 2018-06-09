@@ -1,7 +1,11 @@
-
+@import url('https://fonts.googleapis.com/css?family=VT323');
+body {
+  font-family: 'VT323', monospace;
+}
 
 .Controller {
-  font-size: 80px;
+  font-size: 100px;
+  color: #3d5c5c;
   line-height: .5;
   text-align: center;
   margin: 0;
@@ -12,13 +16,22 @@
 }
 
 .btn {
+  font-family: 'VT323', monospace;
   width: 200px;
-  font-size: 20px;
+  font-size: 30px;
   color: #fff;
   padding: 10px 15px;
-  border-radius: 5px;
 }
 
 .start {
-  background-color: #006080;
+  background-color: #3d5c5c;
+}
+
+.reset {
+  background-color: #cc6666;
+}
+
+button:focus {
+  border: none;
+  outline: none;
 }

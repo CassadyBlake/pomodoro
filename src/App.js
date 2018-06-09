@@ -69,7 +69,12 @@ class App extends Component {
     minutes = minutes < 10 ? "0" + minutes: minutes;
     seconds = seconds < 10 ? "0" + seconds: seconds;
 
-    return minutes + ":" + seconds;
+    if (seconds % 2 === 0) {
+      return minutes + ":" + seconds;
+    }
+    else {
+      return minutes + " " + seconds;
+    }
   };
 
 
@@ -79,7 +84,7 @@ class App extends Component {
         <div className="Controller">
           {this.formatTime(this.state.timeRemaining)}
           <br></br>
-          <button type="button" className="btn start" onClick={this.startResetTimer} >{ this.state.onBreak ? (this.state.isCounting ? "Reset" : "Start Break") : (this.state.isCounting ? "Reset" : "Start Work") }</button>
+          <button type="button" className={ this.state.isCounting ? "btn reset" : "btn start" } onClick={this.startResetTimer} >{ this.state.onBreak ? (this.state.isCounting ? "RESET" : "START BREAK") : (this.state.isCounting ? "RESET" : "START WORK") }</button>
         </div>
       </div>
     );
