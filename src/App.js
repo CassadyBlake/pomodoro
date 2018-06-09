@@ -9,6 +9,8 @@ class App extends Component {
       timeRemaining: {},
       workTime: 1500,
       breakTime: 300,
+      longBreakTime: 1800,
+      sessionCount: 0,
       isCounting: false,
       onBreak: false
     };
@@ -46,7 +48,11 @@ class App extends Component {
     if (newTimeRem <= 0) {
       clearInterval(this.timer);
       if (!this.state.onBreak) {
-        this.setState({ timeRemaining: this.state.breakTime, isCounting: false, onBreak: true })
+        let newSessionCount = this.state.sessionCount + 1;
+        this.setState({ timeRemaining: this.state.breakTime, sessionCount: newSessionCount, isCounting: false, onBreak: true })
+        if (newSessionCount >= 4) {
+          this.setState({ timeRemaining: this.state.longBreakTime, sessionCount: 0 })
+        }
       }
       else {
         this.setState({ timeRemaining: this.state.workTime, isCounting: false, onBreak: false })
