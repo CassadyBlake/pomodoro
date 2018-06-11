@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
+import buzz from 'buzz';
 import './App.css';
 
+const comSound = new buzz.sound("/sounds/completed.mp3", {
+  preload: true,
+});
+
 class App extends Component {
+
+
   constructor(props) {
     super(props);
 
     this.state = {
       timeRemaining: {},
-      workTime: 1500,
-      breakTime: 300,
-      longBreakTime: 1800,
+      workTime: 5,
+      breakTime: 3,
+      longBreakTime: 6,
       sessionCount: 0,
       isCounting: false,
       onBreak: false
@@ -26,6 +33,7 @@ class App extends Component {
   }
 
   startResetTimer() {
+
     if (!this.state.isCounting) {
       this.timer = setInterval(this.countDown, 1000);
       this.setState({ isCounting: true })
@@ -42,10 +50,14 @@ class App extends Component {
   };
 
   countDown() {
+
     let newTimeRem = this.state.timeRemaining - 1;
     this.setState({ timeRemaining: newTimeRem });
 
     if (newTimeRem <= 0) {
+
+      comSound.play();
+
       clearInterval(this.timer);
       if (!this.state.onBreak) {
         let newSessionCount = this.state.sessionCount + 1;
