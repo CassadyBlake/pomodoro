@@ -59,10 +59,8 @@ class TaskList extends Component {
                 this.state.tasks.map( (task, index) =>
                 <div className="task-list" key={index}>
                   <div className= "tasks">
-                    <button value="Delete" className="btn delete" onClick={() => this.deleteTaskClick(task.key)}>
-                      Delete
-                    </button>
-                    &nbsp;{ task.name }
+                    <button className="delete" onClick={() => this.deleteTaskClick(task.key)}></button>
+                    <h3 className="taskName">&nbsp;{ task.name }</h3>
                   </div>
                 </div>
                 )

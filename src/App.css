@@ -1,12 +1,45 @@
-@import url('https://fonts.googleapis.com/css?family=VT323');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
 body {
-  font-family: 'VT323', monospace;
-  background-color: #3d5c5c;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  background-color: #fff;
+}
+
+h1 {
+
+}
+
+h2 {
+  font-weight: 300;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+.App {
+  width: 100%;
+}
+
+.Nav {
+  position: absolute;
+  left: 0px;
+  width: 350px;
+  height: 100%;
+  padding: 20px;
+}
+
+.Main {
+  position: absolute;
+  right: 0px;
+  left: 350px;
+  padding-top: 50%;
+  min-width: 500px;
 }
 
 .Controller {
   font-size: 100px;
-  color: #fff;
+  color: #000;
   line-height: .5;
   text-align: center;
   margin: 0;
@@ -14,30 +47,40 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  min-width: 500px;
 }
 
 .btn {
-  font-family: 'VT323', monospace;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
   width: 100px;
   font-size: 18px;
-  color: #3d5c5c;
   padding: 5px 10px;
 }
 
 .start {
   background-color: #fff;
-  width: 200px;
+  width: 300px;
   font-size: 30px;
-  color: #3d5c5c;
   padding: 10px 15px;
 }
 
 .reset {
-  color: #fff;
-  background-color: #cc6666;
+  color: #cc6666;
+  background-color: #fff;
   width: 200px;
   font-size: 30px;
   padding: 10px 15px;
+}
+
+button {
+  border: none;
+  cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
+  color: #000;
+}
+
+button:hover {
+  color: #999999;
 }
 
 button:focus {

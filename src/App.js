@@ -25,9 +25,9 @@ class App extends Component {
 
     this.state = {
       timeRemaining: {},
-      workTime: 5,
-      breakTime: 3,
-      longBreakTime: 8,
+      workTime: 1500,
+      breakTime: 300,
+      longBreakTime: 1800,
       sessionCount: 0,
       isCounting: false,
       onBreak: false
@@ -92,25 +92,24 @@ class App extends Component {
     minutes = minutes < 10 ? "0" + minutes: minutes;
     seconds = seconds < 10 ? "0" + seconds: seconds;
 
-    if (seconds % 2 === 0) {
-      return minutes + ":" + seconds;
-    }
-    else {
-      return minutes + " " + seconds;
-    }
+    return minutes + ":" + seconds;
+  //  if (seconds % 2 === 0) {
+  //    return minutes + ":" + seconds;
+  //  }
+  //  else {
+  //    return minutes + " " + seconds;
+  //  }
   };
 
 
   render() {
     return (
       <div className="App">
-        <header>
-          <nav>
+        <div className="Nav">
             < TaskList
               firebase={firebase}
             />
-          </nav>
-        </header>
+        </div>
         <div className="Main">
           <div className="Controller">
             {this.formatTime(this.state.timeRemaining)}
