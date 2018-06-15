@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
+import * as firebase from 'firebase';
 import buzz from 'buzz';
 import './App.css';
+import TaskList from './components/TaskList';
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDD4OSEmEXhUOa2-yP6cXzvdxlXcc0hBT8",
+    authDomain: "pomodoro-b89d3.firebaseapp.com",
+    databaseURL: "https://pomodoro-b89d3.firebaseio.com",
+    projectId: "pomodoro-b89d3",
+    storageBucket: "pomodoro-b89d3.appspot.com",
+    messagingSenderId: "1074891164678"
+  };
+  firebase.initializeApp(config);
 
 const comSound = new buzz.sound("/sounds/completed.mp3", {
   preload: true,
 });
 
 class App extends Component {
-
-
   constructor(props) {
     super(props);
 
@@ -16,7 +27,7 @@ class App extends Component {
       timeRemaining: {},
       workTime: 5,
       breakTime: 3,
-      longBreakTime: 6,
+      longBreakTime: 8,
       sessionCount: 0,
       isCounting: false,
       onBreak: false
@@ -92,11 +103,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="Main">
-        <div className="Controller">
-          {this.formatTime(this.state.timeRemaining)}
-          <br></br>
-          <button type="button" className={ this.state.isCounting ? "btn reset" : "btn start" } onClick={this.startResetTimer} >{ this.state.onBreak ? (this.state.isCounting ? "RESET" : "START BREAK") : (this.state.isCounting ? "RESET" : "START WORK") }</button>
+      <div className="App">
+        <header>
+          <nav>
+            < TaskList
+              firebase={firebase}
+            />
+          </nav>
+        </header>
+        <div className="Main">
+          <div className="Controller">
+            {this.formatTime(this.state.timeRemaining)}
+            <br></br>
+            <button type="button" className={ this.state.isCounting ? "btn reset" : "btn start" } onClick={this.startResetTimer} >{ this.state.onBreak ? (this.state.isCounting ? "RESET" : "START BREAK") : (this.state.isCounting ? "RESET" : "START WORK") }</button>
+          </div>
         </div>
       </div>
     );

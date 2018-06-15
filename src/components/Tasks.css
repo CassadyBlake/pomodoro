@@ -1,0 +1,17 @@
+.submit {
+
+}
+
+.delete {
+
+}
+
+.addInput {
+  width: 200px;
+  height: 100%;
+  padding: 5px 10px;
+}
+
+.task-display {
+  color: #fff;
+}
