@@ -54,7 +54,7 @@ class TaskList extends Component {
                   </label>
               </div>
             </form>
-            <h2>Completed Tasks</h2>
+            <h2>Completed Tasks :</h2>
               {
                 this.state.tasks.map( (task, index) =>
                 <div className="task-list" key={index}>
@@ -63,7 +63,7 @@ class TaskList extends Component {
                     <h3 className="taskName">&nbsp;{ task.name }</h3>
                   </div>
                 </div>
-                )
+              ).reverse()
               }
       </div>
     );
