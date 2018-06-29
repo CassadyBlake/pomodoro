@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import buzz from 'buzz';
 import './App.css';
+import './components/Clock.css';
 import TaskList from './components/TaskList';
+
 
   // Initialize Firebase
   var config = {
@@ -64,6 +66,7 @@ class App extends Component {
 
     let newTimeRem = this.state.timeRemaining - 1;
     this.setState({ timeRemaining: newTimeRem });
+    this.updateClock();
 
     if (newTimeRem <= 0) {
 
@@ -82,6 +85,15 @@ class App extends Component {
       }
     }
   };
+
+  updateClock() {
+      let minutes = Math.floor(this.state.timeRemaining / 60);
+      let angleMinutes = (this.state.timeRemaining / 60) * 6;
+      let angleSeconds = ((this.state.timeRemaining - (minutes * 60)) * 60) / 10;
+
+      document.getElementById('js-seconds').style.transform = "translate(-50%, -100%) rotate(" + angleSeconds + "deg)";
+      document.getElementById('js-minutes').style.transform = "translate(-50%, -100%) rotate(" + angleMinutes + "deg)";
+  }
 
   formatTime(timeInSeconds) {
     let minutes = Math.floor(timeInSeconds / 60);
@@ -112,8 +124,17 @@ class App extends Component {
         </div>
         <div className="Main">
           <div className="Controller">
+            <div className="Analog">
+              <div className="clock">
+                <div id ="js-minutes" className="clock__tick clock__tick--minutes">
+                </div>
+                <div id ="js-seconds" className="clock__tick clock__tick--seconds">
+                </div>
+              </div>
+            </div>
+            <div className="Display">
             {this.formatTime(this.state.timeRemaining)}
-            <br></br>
+            </div>
             <button type="button" className={ this.state.isCounting ? "btn reset" : "btn start" } onClick={this.startResetTimer} >{ this.state.onBreak ? (this.state.isCounting ? "RESET" : "START BREAK") : (this.state.isCounting ? "RESET" : "START WORK") }</button>
           </div>
         </div>
