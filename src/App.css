@@ -37,39 +37,47 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 500px; }
+  min-width: 500px;
+  min-height: 430px; }
 
 .Analog {
-  margin: 50px; }
+  margin: 50px 50px 10px 50px; }
 
 .btn {
   font-family: 'Muli', sans-serif;
   font-weight: 700;
   width: 100px;
   font-size: 18px;
-  padding: 5px 10px; }
+  padding: 10px 0px; }
 
 .start {
   background-color: #fff;
   width: 300px;
   font-size: 30px;
-  padding: 10px 15px; }
+  }
 
 .reset {
   color: #cc6666;
   background-color: #fff;
   width: 200px;
-  font-size: 30px;
-  padding: 10px 15px; }
+  font-size: 18px;
+  }
+
+.display {
+
+}
 
 button {
   border: none;
   cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
-  color: #000; }
+  color: #000;
+  }
 
 button:hover {
-  color: #999999; }
+  color: #999999;
+  }
 
 button:focus {
   border: none;
-  outline: none; }
+  outline: none;
+  }

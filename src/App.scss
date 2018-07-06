@@ -81,6 +81,20 @@ h3 {
   padding: 10px 15px;
 }
 
+.play {
+  background:url(/images/round_play_circle_filled_black_18dp.png) no-repeat center;
+  background-size: 20px;
+  height: 40px;
+  width: 75px;
+}
+
+.pause {
+  background:url(/images/round_pause_circle_filled_black_18dp.png) no-repeat center;
+  background-size: 20px;
+  height: 40px;
+  width: 75px;
+}
+
 button {
   border: none;
   cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;

@@ -37,12 +37,25 @@ class App extends Component {
 
     this.timer = 0;
     this.startResetTimer = this.startResetTimer.bind(this);
+    this.handlePausePlayClick = this.handlePausePlayClick.bind(this);
     this.countDown = this.countDown.bind(this);
   }
 
   componentDidMount() {
     let newTimeRem = this.state.workTime;
     this.setState({ timeRemaining: newTimeRem });
+    this.updateClock(newTimeRem);
+  }
+
+  handlePausePlayClick() {
+    let timeRem = this.state.timeRemaining;
+    this.setState({ timeRemaining: timeRem })
+    if(this.state.isCounting) {
+      clearInterval(this.timer);
+      this.setState({ isCounting: false });
+    } else {
+      this.startResetTimer();
+    }
   }
 
   startResetTimer() {
@@ -63,33 +76,32 @@ class App extends Component {
   };
 
   countDown() {
+      let newTimeRem = this.state.timeRemaining - 1;
+      this.setState({ timeRemaining: newTimeRem });
+      this.updateClock(newTimeRem);
 
-    let newTimeRem = this.state.timeRemaining - 1;
-    this.setState({ timeRemaining: newTimeRem });
-    this.updateClock();
+      if (newTimeRem <= 0) {
 
-    if (newTimeRem <= 0) {
+        comSound.play();
 
-      comSound.play();
-
-      clearInterval(this.timer);
-      if (!this.state.onBreak) {
-        let newSessionCount = this.state.sessionCount + 1;
-        this.setState({ timeRemaining: this.state.breakTime, sessionCount: newSessionCount, isCounting: false, onBreak: true })
-        if (newSessionCount >= 4) {
-          this.setState({ timeRemaining: this.state.longBreakTime, sessionCount: 0 })
+        clearInterval(this.timer);
+        if (!this.state.onBreak) {
+          let newSessionCount = this.state.sessionCount + 1;
+          this.setState({ timeRemaining: this.state.breakTime, sessionCount: newSessionCount, isCounting: false, onBreak: true })
+          if (newSessionCount >= 4) {
+            this.setState({ timeRemaining: this.state.longBreakTime, sessionCount: 0 })
+          }
+        }
+        else {
+          this.setState({ timeRemaining: this.state.workTime, isCounting: false, onBreak: false })
         }
       }
-      else {
-        this.setState({ timeRemaining: this.state.workTime, isCounting: false, onBreak: false })
-      }
-    }
   };
 
-  updateClock() {
-      let minutes = Math.floor(this.state.timeRemaining / 60);
-      let angleMinutes = (this.state.timeRemaining / 60) * 6;
-      let angleSeconds = ((this.state.timeRemaining - (minutes * 60)) * 60) / 10;
+  updateClock(time) {
+      let minutes = Math.floor(time / 60);
+      let angleMinutes = (time / 60) * 6;
+      let angleSeconds = ((time - (minutes * 60)) * 60) / 10;
 
       document.getElementById('js-seconds').style.transform = "translate(-50%, -100%) rotate(" + angleSeconds + "deg)";
       document.getElementById('js-minutes').style.transform = "translate(-50%, -100%) rotate(" + angleMinutes + "deg)";
@@ -126,16 +138,18 @@ class App extends Component {
           <div className="Controller">
             <div className="Analog">
               <div className="clock">
+                <div className="end_marker"></div>
+                <button onClick={ this.handlePausePlayClick } className={ this.state.isCounting ? "pp pause" : "pp play" } ></button>
                 <div id ="js-minutes" className="clock__tick clock__tick--minutes">
                 </div>
                 <div id ="js-seconds" className="clock__tick clock__tick--seconds">
                 </div>
               </div>
             </div>
-            <div className="Display">
+            <div className="display">
             {this.formatTime(this.state.timeRemaining)}
             </div>
-            <button type="button" className={ this.state.isCounting ? "btn reset" : "btn start" } onClick={this.startResetTimer} >{ this.state.onBreak ? (this.state.isCounting ? "RESET" : "START BREAK") : (this.state.isCounting ? "RESET" : "START WORK") }</button>
+            <button type="button" className="btn reset" onClick={this.startResetTimer} >{ this.state.isCounting ? "RESET" : " " }</button>
           </div>
         </div>
       </div>
