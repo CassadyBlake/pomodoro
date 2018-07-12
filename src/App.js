@@ -128,13 +128,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="Nav">
-            < TaskList
-              firebase={firebase}
-            />
-        </div>
-        <div className="Main">
+      <div className="Main">
           <div className="Controller">
             <div className="Analog">
               <div className="clock">
@@ -151,8 +145,12 @@ class App extends Component {
             </div>
             <button type="button" className="btn reset" onClick={this.startResetTimer} >{ this.state.isCounting ? "RESET" : " " }</button>
           </div>
+          <div className="Nav">
+              < TaskList
+                firebase={firebase}
+              />
+          </div>
         </div>
-      </div>
     );
   }
 }

@@ -92,10 +92,14 @@
         background-size: 55px;
         height: 55px;
         width: 55px;
+        border: solid 4px #f2f2f2;
+        border-radius: 50%;
       }
 
       .pause:hover {
         background-size: 55px;
         height: 55px;
         width: 55px;
+        border: solid 4px #f2f2f2;
+        border-radius: 50%;
       }

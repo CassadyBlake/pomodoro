@@ -11,34 +11,35 @@ h3 {
   font-weight: 300; }
 
 .App {
-  width: 100%; }
-
-.Nav {
-  position: absolute;
-  left: 0px;
-  width: 350px;
-  height: 100%;
-  padding: 20px; }
+  text-align: center;
+}
 
 .Main {
-  position: absolute;
-  right: 0px;
-  left: 350px;
-  padding-top: 50%;
-  min-width: 500px; }
+  text-align: center;
+  margin: auto;
+  width: 800px;
+  padding: 40px;
+  height: 100%;
+}
+
+.Nav {
+  text-align: right;
+  display: inline-block;
+  position: relative;
+  width: 350px;
+  max-height: 500px;
+ }
 
 .Controller {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
   font-size: 100px;
   color: #000;
   line-height: .5;
   text-align: center;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 500px;
-  min-height: 430px; }
+  width: 350px;
+ }
 
 .Analog {
   margin: 50px 50px 10px 50px; }
@@ -71,6 +72,7 @@ button {
   border: none;
   cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
   color: #000;
+  padding: 0 0;
   }
 
 button:hover {

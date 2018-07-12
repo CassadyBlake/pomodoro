@@ -48,23 +48,23 @@ class TaskList extends Component {
           <form className="form-task" onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <h2>Add a completed task</h2>
-                  <button type="submit" className="btn submit" value="Create Task">Add</button>
                   <label>
                     <input type="text" className="addInput" placeholder="type new task name" value={this.state.value} onChange={this.handleChange} />
                   </label>
+                  <button type="submit" className="btn submit" value="Create Task">Add</button>
               </div>
             </form>
-            <h2>Completed Tasks :</h2>
-              {
-                this.state.tasks.map( (task, index) =>
-                <div className="task-list" key={index}>
-                  <div className= "tasks">
-                    <button className="delete" onClick={() => this.deleteTaskClick(task.key)}></button>
-                    <h3 className="taskName">&nbsp;{ task.name }</h3>
-                  </div>
-                </div>
-              ).reverse()
-              }
+            <div className="task-list" >
+              <h2>Completed Tasks :</h2>
+                {
+                  this.state.tasks.map( (task, index) =>
+                    <div className= "tasks" key={index}>
+                      <div className="taskName">&nbsp;{ task.name }</div>
+                      <button className="delete" onClick={() => this.deleteTaskClick(task.key)}></button>
+                    </div>
+                ).reverse()
+                }
+            </div>
       </div>
     );
   }

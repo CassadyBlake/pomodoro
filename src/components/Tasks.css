@@ -1,16 +1,23 @@
+
+
 .tasks {
-  display: flex; }
+  padding: 10px 0px;
+   }
 
 .taskName {
-  margin: 0;
-  padding: 10px 10px; }
+  display: inline;
+  position: absolute;
+  right: 80px;
+  height: 40px;
+  line-height: 40px;
+}
 
 .submit {
   font-size: 18px;
-  width: 75px;
-  margin-right: 10px; }
+  width: 75px; }
 
 .delete {
+  display: inline;
   background: url(/images/baseline_check_circle_black_18dp.png) no-repeat center;
   background-size: 20px;
   height: 40px;
