@@ -1,4 +1,8 @@
-
+.task-list {
+  overflow: scroll;
+  scroll-behavior: smooth;
+  max-height: 300px;
+}
 
 .tasks {
   padding: 10px 0px;
@@ -6,8 +10,8 @@
 
 .taskName {
   display: inline;
-  position: absolute;
   right: 80px;
+  vertical-align: top;
   height: 40px;
   line-height: 40px;
 }
