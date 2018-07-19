@@ -36,7 +36,7 @@ class App extends Component {
     };
 
     this.timer = 0;
-    this.startResetTimer = this.startResetTimer.bind(this);
+    this.resetTimer = this.resetTimer.bind(this);
     this.handlePausePlayClick = this.handlePausePlayClick.bind(this);
     this.countDown = this.countDown.bind(this);
   }
@@ -54,28 +54,27 @@ class App extends Component {
       clearInterval(this.timer);
       this.setState({ isCounting: false });
     } else {
-      this.startResetTimer();
-    }
-  }
-
-  startResetTimer() {
-
-    if (!this.state.isCounting) {
       this.timer = setInterval(this.countDown, 1000);
       this.setState({ isCounting: true })
     }
-    else {
+  }
+
+  resetTimer() {
       clearInterval(this.timer);
       if (!this.state.onBreak) {
         this.setState({ timeRemaining: this.state.workTime, isCounting: false });
+        this.updateClock(this.state.workTime)
       }
       else {
         this.setState({ timeRemaining: this.state.breakTime, isCounting: false });
+        this.updateClock(this.state.breakTime)
       }
-    }
+
+    console.log(this.state.timeRemaining);
   };
 
   countDown() {
+    console.log(this.state.timeRemaining);
       let newTimeRem = this.state.timeRemaining - 1;
       this.setState({ timeRemaining: newTimeRem });
       this.updateClock(newTimeRem);
@@ -87,9 +86,11 @@ class App extends Component {
         clearInterval(this.timer);
         if (!this.state.onBreak) {
           let newSessionCount = this.state.sessionCount + 1;
-          this.setState({ timeRemaining: this.state.breakTime, sessionCount: newSessionCount, isCounting: false, onBreak: true })
+          this.setState({ timeRemaining: this.state.breakTime, sessionCount: newSessionCount, isCounting: false, onBreak: true });
+          this.updateClock(this.state.breakTime);
           if (newSessionCount >= 4) {
             this.setState({ timeRemaining: this.state.longBreakTime, sessionCount: 0 })
+            this.updateClock(this.state.longBreakTime);
           }
         }
         else {
@@ -143,7 +144,7 @@ class App extends Component {
             <div className="display">
             {this.formatTime(this.state.timeRemaining)}
             </div>
-            <button type="button" className="btn reset" onClick={this.startResetTimer} >{ this.state.isCounting ? "RESET" : " " }</button>
+            <button type="button" className={ this.state.timeRemaining !== 1500 ? "btn reset" : "" } onClick={this.resetTimer} >{ this.state.timeRemaining !== 1500 ? "RESET" : "" }</button>
           </div>
           <div className="Nav">
               < TaskList

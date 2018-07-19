@@ -2,10 +2,13 @@
   overflow: scroll;
   scroll-behavior: smooth;
   max-height: 300px;
+  border: solid #ccc;
+  border-width: 0px 0px 1px 1px;
+  border-left:
 }
 
 .tasks {
-  padding: 10px 0px;
+  padding: 5px 0px 5px 10px;
    }
 
 .taskName {
@@ -22,10 +25,12 @@
 
 .delete {
   display: inline;
+  position: sticky;
   background: url(/images/baseline_check_circle_black_18dp.png) no-repeat center;
   background-size: 20px;
   height: 40px;
-  width: 75px; }
+  width: 75px;
+  left: 80%; }
 
 .delete:hover {
   background: url(/images/baseline_delete_forever_black_18dp.png) no-repeat center;
@@ -35,7 +40,7 @@
 
 .addInput {
   border-width: 0 0 1px 1px;
-  width: 200px;
+  width: 245px;
   height: 100%;
   padding: 5px 10px; }
 

@@ -23,11 +23,13 @@ h3 {
 }
 
 .Nav {
-  text-align: right;
+  text-align: left;
   display: inline-block;
   position: relative;
   width: 350px;
   max-height: 500px;
+  padding-left: 40px;
+  border-left: 1px solid #000;
  }
 
 .Controller {
@@ -60,8 +62,10 @@ h3 {
 .reset {
   color: #cc6666;
   background-color: #fff;
-  width: 200px;
+  width: 100px;
   font-size: 18px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
   }
 
 .display {
@@ -76,10 +80,29 @@ button {
   }
 
 button:hover {
-  color: #999999;
+  background-color: #f2f2f2;
   }
 
 button:focus {
-  border: none;
   outline: none;
   }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

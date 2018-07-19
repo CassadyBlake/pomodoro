@@ -54,8 +54,8 @@ class TaskList extends Component {
                   <button type="submit" className="btn submit" value="Create Task">Add</button>
               </div>
             </form>
+            <h2>Completed Tasks</h2>
             <div className="task-list" >
-              <h2>Completed Tasks :</h2>
                 {
                   this.state.tasks.map( (task, index) =>
                     <div className= "tasks" key={index}>
