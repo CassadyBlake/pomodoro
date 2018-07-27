@@ -11,16 +11,14 @@ h3 {
   font-weight: 300; }
 
 .App {
-  text-align: center;
-}
+  text-align: center; }
 
 .Main {
   text-align: center;
   margin: auto;
   width: 800px;
   padding: 40px;
-  height: 100%;
-}
+  height: 100%; }
 
 .Nav {
   text-align: left;
@@ -29,8 +27,7 @@ h3 {
   width: 350px;
   max-height: 500px;
   padding-left: 40px;
-  border-left: 1px solid #000;
- }
+  border-left: 1px solid #000; }
 
 .Controller {
   display: inline-block;
@@ -40,8 +37,7 @@ h3 {
   color: #000;
   line-height: .5;
   text-align: center;
-  width: 350px;
- }
+  width: 350px; }
 
 .Analog {
   margin: 50px 50px 10px 50px; }
@@ -56,8 +52,7 @@ h3 {
 .start {
   background-color: #fff;
   width: 300px;
-  font-size: 30px;
-  }
+  font-size: 30px; }
 
 .reset {
   color: #cc6666;
@@ -65,44 +60,32 @@ h3 {
   width: 100px;
   font-size: 18px;
   border-radius: 2px;
-  border: 1px solid #ccc;
-  }
-
-.display {
-
-}
+  border: 1px solid #ccc; }
 
 button {
   border: none;
   cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
   color: #000;
-  padding: 0 0;
-  }
+  padding: 0 0; }
 
 button:hover {
-  background-color: #f2f2f2;
-  }
+  background-color: #f2f2f2; }
 
 button:focus {
-  outline: none;
-  }
+  outline: none; }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
-}
+  width: 10px; }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #fff;
-}
+  background: #fff; }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
-}
+  background: #888; }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
+  background: #555; }

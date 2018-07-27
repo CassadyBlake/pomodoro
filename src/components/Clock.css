@@ -4,21 +4,21 @@
   height: 200px;
   background: linear-gradient(-45deg, #fff, #fff, #ccc);
   border-radius: 50%;
-  border: 2px solid #000;
+  border: 4px solid #000;
   position: relative;
   margin: auto; }
-  .clock::after {
+  .clock:after {
     content: '';
     display: block;
-    width: 48px;
-    height: 48px;
-    background: #f2f2f2;
+    width: 10px;
+    height: 10px;
+    background: #000;
     position: absolute;
     left: 50%;
     top: 50%;
     border-radius: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 2; }
+    transform: translate(-50%, -50%);
+    z-index: 3; }
   .clock .clock__tick {
     position: absolute;
     top: 50%;
@@ -27,79 +27,17 @@
     transform-origin: bottom center;
     text-align: center; }
     .clock .clock__tick.clock__tick--minutes {
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 75px solid #000;
+      width: 5px;
+      height: 60px;
+      background: #000;
       z-index: 2;
       transform: translate(-50%, -100%);
+      border-radius: 5px 5px 0 0;
       overflow: hidden; }
     .clock .clock__tick.clock__tick--seconds {
-      width: 0;
-      height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-bottom: 100px solid #cc6666;
+      width: 2px;
+      height: 100px;
+      background: #cc6666;
       z-index: 1;
       transform: translate(-50%, -100%);
       border-radius: 1px; }
-
-      .end_marker {
-        position: absolute;
-        display: block;
-        width: 0;
-	      height: 0;
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        border-top: 20px solid #000;
-        text-align: center;
-        top: 8px;
-        left: 50%;
-        transform-origin: top center;
-        transform: translate(-50%, -50%);
-      }
-
-      .pp {
-        position: absolute;
-        display: block;
-        top: 50%;
-        left: 50%;
-        text-align: center;
-        transform-origin: bottom center;
-        transform: translate(-50%, -50%);
-      }
-
-      .play {
-        background-color: #cc6666;
-        background: url(/images/round_play_circle_filled_black_18dp.png) no-repeat center;
-        background-size: 50px;
-        height: 50px;
-        width: 50px;
-        z-index: 3;
-        }
-
-      .pause {
-        background-color: #cc6666;
-        background: url(/images/round_pause_circle_filled_black_18dp.png) no-repeat center;
-        background-size: 50px;
-        height: 50px;
-        width: 50px;
-        z-index: 3;
-        }
-
-      .play:hover {
-        background-size: 55px;
-        height: 55px;
-        width: 55px;
-        border: solid 4px #f2f2f2;
-        border-radius: 50%;
-      }
-
-      .pause:hover {
-        background-size: 55px;
-        height: 55px;
-        width: 55px;
-        border: solid 4px #f2f2f2;
-        border-radius: 50%;
-      }
