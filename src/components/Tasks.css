@@ -1,36 +1,20 @@
-.task-list {
-  overflow: scroll;
-  scroll-behavior: smooth;
-  max-height: 300px;
-  border: solid #ccc;
-  border-width: 0px 0px 1px 1px;
-  border-left:
-}
-
 .tasks {
-  padding: 5px 0px 5px 10px;
-   }
+  display: flex; }
 
 .taskName {
-  display: inline;
-  right: 80px;
-  vertical-align: top;
-  height: 40px;
-  line-height: 40px;
-}
+  margin: 0;
+  padding: 10px 10px; }
 
 .submit {
   font-size: 18px;
-  width: 75px; }
+  width: 75px;
+  margin-right: 10px; }
 
 .delete {
-  display: inline;
-  position: sticky;
   background: url(/images/baseline_check_circle_black_18dp.png) no-repeat center;
   background-size: 20px;
   height: 40px;
-  width: 75px;
-  left: 80%; }
+  width: 75px; }
 
 .delete:hover {
   background: url(/images/baseline_delete_forever_black_18dp.png) no-repeat center;
@@ -40,7 +24,7 @@
 
 .addInput {
   border-width: 0 0 1px 1px;
-  width: 245px;
+  width: 200px;
   height: 100%;
   padding: 5px 10px; }
 
