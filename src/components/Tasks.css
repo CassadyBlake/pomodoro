@@ -3,20 +3,17 @@
   scroll-behavior: smooth;
   max-height: 300px;
   border: solid #ccc;
-  border-width: 0px 0px 1px 1px;
-}
+  border-width: 0px 0px 1px 1px; }
 
 .tasks {
-  padding: 5px 0px 5px 10px;
-   }
+  padding: 5px 0px 5px 10px; }
 
 .taskName {
   display: inline;
   right: 80px;
   vertical-align: top;
   height: 40px;
-  line-height: 40px;
-}
+  line-height: 40px; }
 
 .submit {
   font-size: 18px;

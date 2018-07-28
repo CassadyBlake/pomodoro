@@ -19,7 +19,7 @@
     top: 50%;
     border-radius: 50%;
     transform: translate(-50%,-50%);
-    z-index: 3;
+    z-index: 1;
   }
 
   .clock__tick {
@@ -30,17 +30,17 @@
     transform-origin: bottom center;
     text-align: center;
     &.clock__tick--minutes {
-      width: 5px;
-      height: 60px;
+      width: 8px;
+      height: 50px;
+      border-top: 20px solid #000;
       background: #000;
       z-index: 2;
       transform: translate(-50%,-100%);
-      border-radius: 5px 5px 0 0;
       overflow: hidden;
     }
 
     &.clock__tick--seconds {
-      width: 2px;
+      width: 3px;
       height: 100px;
       background: #cc6666;
       z-index: 1;
@@ -49,3 +49,62 @@
     }
   }
 }
+
+.end_marker {
+        position: absolute;
+        display: block;
+        width: 0;
+	      height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 20px solid #000;
+        text-align: center;
+        top: 8px;
+        left: 50%;
+        transform-origin: top center;
+        transform: translate(-50%, -50%);
+      }
+
+      .pp {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        transform-origin: bottom center;
+        transform: translate(-50%, -50%);
+      }
+
+      .play {
+        background-color: #cc6666;
+        background: url(/images/round_play_circle_filled_black_18dp.png) no-repeat center;
+        background-size: 50px;
+        height: 50px;
+        width: 50px;
+        z-index: 3;
+        }
+
+      .pause {
+        background-color: #cc6666;
+        background: url(/images/round_pause_circle_filled_black_18dp.png) no-repeat center;
+        background-size: 50px;
+        height: 50px;
+        width: 50px;
+        z-index: 3;
+        }
+
+      .play:hover {
+        background-size: 55px;
+        height: 55px;
+        width: 55px;
+        border: solid 4px #f2f2f2;
+        border-radius: 50%;
+      }
+
+      .pause:hover {
+        background-size: 55px;
+        height: 55px;
+        width: 55px;
+        border: solid 4px #f2f2f2;
+        border-radius: 50%;
+      }
