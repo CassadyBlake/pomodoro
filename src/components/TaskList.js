@@ -46,15 +46,15 @@ class TaskList extends Component {
     return(
       <div className="task-display">
           <form className="form-task" onSubmit={this.handleSubmit}>
-              <div className="form-group">
-                <h2>Add a completed task</h2>
+              <h2>Add a Task</h2>
+              <div className="tasks">
                   <label>
                     <input type="text" className="addInput" placeholder="type new task name" value={this.state.value} onChange={this.handleChange} />
                   </label>
                   <button type="submit" className="btn submit" value="Create Task">Add</button>
               </div>
             </form>
-            <h2>Completed Tasks</h2>
+            <h2>Tasks to Complete</h2>
             <div className="task-list" >
                 {
                   this.state.tasks.map( (task, index) =>

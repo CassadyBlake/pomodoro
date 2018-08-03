@@ -1,8 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Muli");
+@import url("https://fonts.googleapis.com/css?family=Merienda");
+html {
+  height: 100%; }
+
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Merienda', serif;
   font-weight: 300;
-  background-color: #fff; }
+  background: linear-gradient(-45deg, #009DF8, #F1F1E6, #F1F1E6, #F2FAFF); }
+
+h1 {
+  color: #F1F1E6;
+  background-color: #009DF8;
+  margin: 10px; }
 
 h2 {
   font-weight: 300; }
@@ -13,37 +22,51 @@ h3 {
 .App {
   text-align: center; }
 
-.Main {
+.Title {
+  background-color: #009DF8;
+  box-shadow: 2px 2px 10px #009DF8;
   text-align: center;
   margin: auto;
-  width: 800px;
-  padding: 40px;
-  height: 100%; }
+  margin-top: 30px;
+  width: 750px;
+  padding: 5px 10px;
+  border-radius: 20px 20px 0px 0px; }
 
-.Nav {
+.Main {
+  background-color: #00628F;
+  box-shadow: 2px 2px 10px #009DF8;
+  text-align: center;
+  margin: auto;
+  width: 750px;
+  padding: 10px;
+  min-height: 400px;
+  border-radius: 0px 0px 20px 20px; }
+
+.Tasks-box {
   text-align: left;
   display: inline-block;
   position: relative;
   width: 350px;
-  max-height: 500px;
   padding-left: 40px;
-  border-left: 1px solid #000; }
+  margin: 10px 0px 30px 0px; }
 
 .Controller {
   display: inline-block;
   position: relative;
   vertical-align: top;
   font-size: 100px;
-  color: #000;
+  font-family: 'Muli', sans-serif;
+  color: #F1F1E6;
+  text-shadow: -2px -2px #009DF8;
   line-height: .5;
   text-align: center;
   width: 350px; }
 
 .Analog {
-  margin: 50px 50px 10px 50px; }
+  margin: 10px 50px 10px 50px; }
 
 .btn {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Merienda', sans-serif;
   font-weight: 700;
   width: 100px;
   font-size: 18px;
@@ -55,21 +78,24 @@ h3 {
   font-size: 30px; }
 
 .reset {
-  color: #cc6666;
-  background-color: #fff;
+  color: #A2392E;
+  background-color: #F1F1E6;
   width: 100px;
+  height: 45px;
   font-size: 18px;
-  border-radius: 2px;
-  border: 1px solid #ccc; }
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px #009DF8; }
 
 button {
+  background: none;
   border: none;
   cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
-  color: #000;
+  color: #A2392E;
   padding: 0 0; }
 
 button:hover {
-  background-color: #f2f2f2; }
+  color: #009DF8; }
 
 button:focus {
   outline: none; }

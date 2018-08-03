@@ -1,12 +1,11 @@
-.task-list {
-  overflow: scroll;
-  scroll-behavior: smooth;
-  max-height: 300px;
-  border: solid #ccc;
-  border-width: 0px 0px 1px 1px; }
-
 .tasks {
-  padding: 5px 0px 5px 10px; }
+  color: #00628F;
+  padding: 5px 0px 5px 10px;
+  margin-bottom: 5px;
+  width: 300px;
+  border-radius: 5px;
+  background: linear-gradient(100deg, #F1F1E6, #F1F1E6, #F1F1E6);
+  box-shadow: 2px 2px #009DF8; }
 
 .taskName {
   display: inline;
@@ -17,16 +16,16 @@
 
 .submit {
   font-size: 18px;
-  width: 75px; }
+  width: 50px; }
 
 .delete {
   display: inline;
-  position: sticky;
+  position: absolute;
   background: url(/images/baseline_check_circle_black_18dp.png) no-repeat center;
   background-size: 20px;
   height: 40px;
   width: 75px;
-  left: 80%; }
+  left: 73%; }
 
 .delete:hover {
   background: url(/images/baseline_delete_forever_black_18dp.png) no-repeat center;
@@ -35,8 +34,10 @@
   width: 75px; }
 
 .addInput {
+  background-color: #F1F1E6;
   border-width: 0 0 1px 1px;
-  width: 245px;
+  border-color: #009DF8;
+  width: 225px;
   height: 100%;
   padding: 5px 10px; }
 
@@ -44,4 +45,4 @@ input:focus {
   outline: none; }
 
 .task-display {
-  color: #000; }
+  color: #F1F1E6; }

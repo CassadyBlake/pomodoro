@@ -129,29 +129,34 @@ class App extends Component {
 
   render() {
     return (
+    <div className="body">
+      <div className="Title">
+        <h1>Pomodoro Timer</h1>
+      </div>
       <div className="Main">
           <div className="Controller">
-            <div className="Analog">
-              <div className="clock">
-                <div className="end_marker"></div>
-                <button onClick={ this.handlePausePlayClick } className={ this.state.isCounting ? "pp pause" : "pp play" } ></button>
-                <div id ="js-minutes" className="clock__tick clock__tick--minutes">
-                </div>
-                <div id ="js-seconds" className="clock__tick clock__tick--seconds">
-                </div>
+              <div className="Analog">
+                  <div className="clock">
+                    <div className="end_marker"></div>
+                    <button onClick={ this.handlePausePlayClick } className={ this.state.isCounting ? "pp pause" : "pp play" } ></button>
+                    <div id ="js-minutes" className="clock__tick clock__tick--minutes">
+                    </div>
+                    <div id ="js-seconds" className="clock__tick clock__tick--seconds">
+                    </div>
+                  </div>
               </div>
-            </div>
-            <div className="display">
-            {this.formatTime(this.state.timeRemaining)}
-            </div>
-            <button type="button" className={ this.state.timeRemaining !== 1500 ? "btn reset" : "" } onClick={this.resetTimer} >{ this.state.timeRemaining !== 1500 ? "RESET" : "" }</button>
+              <div className="display">
+                {this.formatTime(this.state.timeRemaining)}
+              </div>
+              <button type="button" className={ this.state.timeRemaining !== 1500 ? "btn reset" : "" } onClick={this.resetTimer} >{ this.state.timeRemaining !== 1500 ? "Reset" : "" }</button>
           </div>
-          <div className="Nav">
+          <div className="Tasks-box">
               < TaskList
                 firebase={firebase}
               />
           </div>
-        </div>
+      </div>
+    </div>
     );
   }
 }
