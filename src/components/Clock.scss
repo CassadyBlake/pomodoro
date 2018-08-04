@@ -2,12 +2,12 @@
   transform: scale(0.8);
   width: 200px;
   height: 200px;
-  background: linear-gradient(-55deg, #F2FAFF, #F2FAFF, #F1F1E6, #F2FAFF);
-  border: 3px solid #009DF8;
+  background: linear-gradient(-55deg, #EF972C, #E6F4F1, #E6F4F1);
+  border: 3px solid #002740;
   border-radius: 50%;
   position: relative;
   margin: auto;
-  box-shadow: -3px -3px #009DF8;
+  box-shadow: -3px -3px #002740;
 
   &:after {
     content: '';
@@ -35,7 +35,7 @@
       height: 50px;
       border-left: 7px solid transparent;
       border-right: 7px solid transparent;
-      border-bottom: 60px solid #009DF8;
+      border-bottom: 60px solid #3A7F9E;
       z-index: 2;
       transform: translate(-50%,-100%);
       overflow: hidden;
@@ -44,7 +44,7 @@
     &.clock__tick--seconds {
       width: 3px;
       height: 85px;
-      background: #A2392E;
+      background: #479F91;
       z-index: 1;
       transform: translate(-50%,-100%);
       border-radius: 1px;
@@ -59,7 +59,7 @@
 	      height: 0;
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-top: 18px solid #009DF8;
+        border-top: 18px solid #002740;
         text-align: center;
         top: 4px;
         left: 50%;
@@ -80,9 +80,9 @@
       .play {
         background: url(/images/round_play_circle_filled_black_18dp.png) no-repeat center;
         background-size: 50px;
-        background-color: #F2FAFF;
+        background-color: #E6F4F1;
         border-radius: 50%;
-        box-shadow: 1px 1px 5px #F2FAFF;
+        box-shadow: 2px 2px #3A7F9E;
         height: 40px;
         width: 40px;
         z-index: 3;
@@ -91,9 +91,9 @@
       .pause {
         background: url(/images/round_pause_circle_filled_black_18dp.png) no-repeat center;
         background-size: 50px;
-        background-color: #F2FAFF;
+        background-color: #E6F4F1;
         border-radius: 50%;
-        box-shadow: 1px 1px 5px #F2FAFF;
+        box-shadow: 2px 2px #3A7F9E;
         height: 40px;
         width: 40px;
         z-index: 3;

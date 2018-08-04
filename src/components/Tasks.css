@@ -1,11 +1,11 @@
 .tasks {
-  color: #00628F;
+  color: #3A7F9E;
   padding: 5px 0px 5px 10px;
   margin-bottom: 5px;
   width: 300px;
   border-radius: 5px;
-  background: linear-gradient(100deg, #F1F1E6, #F1F1E6, #F1F1E6);
-  box-shadow: 2px 2px #009DF8; }
+  background: linear-gradient(135deg, #E6F4F1, #E6F4F1, #E6F4F1);
+  box-shadow: 2px 2px 5px #002740; }
 
 .taskName {
   display: inline;
@@ -34,9 +34,11 @@
   width: 75px; }
 
 .addInput {
-  background-color: #F1F1E6;
-  border-width: 0 0 1px 1px;
-  border-color: #009DF8;
+  color: #479F91;
+  background-color: #fff;
+  border-width: 0 0 1px 4px;
+  border-color: #479F91;
+  border-style: solid;
   width: 225px;
   height: 100%;
   padding: 5px 10px; }
@@ -45,4 +47,4 @@ input:focus {
   outline: none; }
 
 .task-display {
-  color: #F1F1E6; }
+  color: #E6F4F1; }

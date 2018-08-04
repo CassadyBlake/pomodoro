@@ -57,10 +57,11 @@ class App extends Component {
       this.timer = setInterval(this.countDown, 1000);
       this.setState({ isCounting: true })
     }
+    console.log(this.timer)
   }
 
   resetTimer() {
-      clearInterval(this.timer);
+    clearInterval(this.timer);
       if (!this.state.onBreak) {
         this.setState({ timeRemaining: this.state.workTime, isCounting: false });
         this.updateClock(this.state.workTime)
@@ -69,12 +70,9 @@ class App extends Component {
         this.setState({ timeRemaining: this.state.breakTime, isCounting: false });
         this.updateClock(this.state.breakTime)
       }
-
-    console.log(this.state.timeRemaining);
   };
 
   countDown() {
-    console.log(this.state.timeRemaining);
       let newTimeRem = this.state.timeRemaining - 1;
       this.setState({ timeRemaining: newTimeRem });
       this.updateClock(newTimeRem);
@@ -131,7 +129,7 @@ class App extends Component {
     return (
     <div className="body">
       <div className="Title">
-        <h1>Pomodoro Timer</h1>
+        <h1>POMODORO TIMER</h1>
       </div>
       <div className="Main">
           <div className="Controller">
@@ -148,7 +146,7 @@ class App extends Component {
               <div className="display">
                 {this.formatTime(this.state.timeRemaining)}
               </div>
-              <button type="button" className={ this.state.timeRemaining !== 1500 ? "btn reset" : "" } onClick={this.resetTimer} >{ this.state.timeRemaining !== 1500 ? "Reset" : "" }</button>
+              <button type="button" className={ this.state.timeRemaining !== 1500 ? "btn reset" : "btn start" } onClick={ this.state.timeRemaining !== 1500 ? this.resetTimer : this.handlePausePlayClick} >{ this.state.timeRemaining !== 1500 ? "Reset" : "Start" }</button>
           </div>
           <div className="Tasks-box">
               < TaskList
