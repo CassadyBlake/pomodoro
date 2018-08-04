@@ -7,12 +7,12 @@ body {
   font-family: 'Amaranth', serif;
   font-weight: 300;
   letter-spacing: 2px;
-  background: linear-gradient(-45deg, #EF972C, #E6F4F1, #E6F4F1, #479F91); }
+  background: linear-gradient(-45deg, #F6D940, #E6F4F1, #E6F4F1, #479F91); }
 
 h1 {
   font-size: 40px;
   letter-spacing: 4px;
-  background: -webkit-linear-gradient(45deg, #E6F4F1, #EF972C);
+  background: -webkit-linear-gradient(45deg, #E6F4F1, #F6D940);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 10px; }
@@ -103,7 +103,7 @@ button {
   padding: 0 0; }
 
 button:hover {
-  color: #EF972C; }
+  color: #002740; }
 
 button:focus {
   outline: none; }
