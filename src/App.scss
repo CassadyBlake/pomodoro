@@ -1,22 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Muli");
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100|Rajdhani:300');
 html {
     height: 100%;
 }
 
 body {
-  font-family: 'Amaranth', serif;
+  font-family: 'Rajdhani', serif;
   font-weight: 300;
   letter-spacing: 2px;
-  background: linear-gradient(-45deg, #F6D940, #E6F4F1, #E6F4F1, #479F91);
+  background: #fff;
  }
 
 h1 {
+  color: #B66100;
   font-size: 40px;
   letter-spacing: 4px;
-  background: -webkit-linear-gradient(45deg, #E6F4F1, #F6D940);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   margin: 10px;
 }
 
@@ -31,25 +30,25 @@ h3 {
 }
 
 .Title {
-  background-color: #002740;
-  box-shadow: 2px 2px 10px #3A7F9E;
+  background-color: #2A3B43;
+  border: solid 2px #2A3B43;
+  box-shadow: 2px 2px 5px #AFDDF1;
   text-align: center;
   margin: auto;
   margin-top: 30px;
   width: 750px;
   padding: 5px 10px;
-  border-radius: 20px 20px 0px 0px;
 }
 
 .Main {
-  background: linear-gradient(0deg, #3A7F9E, #3A7F9E, #3A7F9E, #3A7F9E, #176684);
-  box-shadow: 2px 2px 10px #3A7F9E;
+  background: linear-gradient(0deg, #E2F6FF, #E2F6FF, #E2F6FF, #E2F6FF, #AFDDF1);
+  box-shadow: 2px 2px 5px #AFDDF1;
+  border: solid 2px #2A3B43;
   text-align: center;
   margin: auto;
   width: 750px;
   padding: 10px;
   min-height: 400px;
-  border-radius: 0px 0px 20px 20px;
 }
 
 .Tasks-box {
@@ -66,8 +65,8 @@ h3 {
   position: relative;
   vertical-align: top;
   font-size: 100px;
-  font-family: 'Muli', sans-serif;
-  color: #E6F4F1;
+  font-family: 'Rajdhani', monospace, sans-serif;
+  color: #B66100;
   line-height: .5;
   text-align: center;
   width: 350px;
@@ -77,48 +76,47 @@ h3 {
   margin: 10px 50px 10px 50px; }
 
 .btn {
-  font-family: 'Amaranth', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-weight: 700;
   width: 100px;
   font-size: 18px;
   padding: 10px 0px; }
 
 .start {
-  color: #479F91;
+  color: #B66100;
   background-color: #E6F4F1;
   width: 100px;
   height: 45px;
   font-size: 18px;
-  border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 5px #002740;
   }
 
 .reset {
-  color: #479F91;
+  color: #B66100;
   background-color: #E6F4F1;
   width: 100px;
   height: 45px;
   font-size: 18px;
-  border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 5px #002740;
   }
 
 .display {
-
+  font-family: "Roboto", monospace;
+  font-weight: 100;
 }
 
 button {
   background: none;
   border: none;
   cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
-  color: #479F91;
+  color: #B66100;
   padding: 0 0;
   }
 
 button:hover {
-  color: #002740;
+  color: #AFDDF1;
   }
 
 button:focus {

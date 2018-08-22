@@ -2,12 +2,12 @@
   transform: scale(0.8);
   width: 200px;
   height: 200px;
-  background: linear-gradient(-55deg, #F6D940, #E6F4F1, #E6F4F1);
-  border: 3px solid #002740;
+  background: #E2F6FF;
+  border: 3px solid #2A3B43;
   border-radius: 50%;
   position: relative;
   margin: auto;
-  box-shadow: -3px -3px #002740; }
+  box-shadow: -3px -3px #2A3B43; }
   .clock:after {
     content: '';
     display: block;
@@ -32,14 +32,14 @@
       height: 50px;
       border-left: 7px solid transparent;
       border-right: 7px solid transparent;
-      border-bottom: 60px solid #3A7F9E;
+      border-bottom: 60px solid #2A3B43;
       z-index: 2;
       transform: translate(-50%, -100%);
       overflow: hidden; }
     .clock .clock__tick.clock__tick--seconds {
       width: 3px;
       height: 85px;
-      background: #479F91;
+      background: #B66100;
       z-index: 1;
       transform: translate(-50%, -100%);
       border-radius: 1px; }
@@ -51,7 +51,7 @@
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 18px solid #002740;
+  border-top: 18px solid #2A3B43;
   text-align: center;
   top: 4px;
   left: 50%;
@@ -72,7 +72,7 @@
   background-size: 50px;
   background-color: #E6F4F1;
   border-radius: 50%;
-  box-shadow: 2px 2px #3A7F9E;
+  box-shadow: 2px 2px #2A3B43;
   height: 40px;
   width: 40px;
   z-index: 3; }
