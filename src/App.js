@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import buzz from 'buzz';
-import './App.css';
-import './components/Clock.css';
+import './style/App.css';
+import './style/Clock.css';
 import TaskList from './components/TaskList';
 
 
@@ -129,14 +129,20 @@ class App extends Component {
     return (
     <div className="body">
       <div className="Title">
-        <h1>POMODORO TIMER</h1>
+        <div className="cross_line"></div>
+        <h1>POMODORO</h1>
+        <h1>TIMER</h1>
       </div>
       <div className="Main">
           <div className="Controller">
               <div className="Analog">
                   <div className="clock">
                     <div className="end_marker"></div>
-                    <button onClick={ this.handlePausePlayClick } className={ this.state.isCounting ? "pp pause" : "pp play" } ></button>
+                    <button onClick={ this.handlePausePlayClick } className={ this.state.isCounting ? "pp pause" : "pp play" } >
+                      <i class="material-icons md-dark">
+                        {this.state.isCounting ? 'pause' : 'play_arrow'}
+                      </i>
+                    </button>
                     <div id ="js-minutes" className="clock__tick clock__tick--minutes">
                     </div>
                     <div id ="js-seconds" className="clock__tick clock__tick--seconds">

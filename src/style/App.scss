@@ -1,20 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Muli");
-@import url("https://fonts.googleapis.com/css?family=Amaranth");
-@import url("https://fonts.googleapis.com/css?family=Roboto:100|Rajdhani:300");
+@import url('https://fonts.googleapis.com/css?family=Amaranth');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100|Rajdhani:300');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap');
 html {
-  height: 100%; }
+    height: 100%;
+}
 
 body {
-  font-family: 'Rajdhani', serif;
+  font-family: 'Comfortaa', serif;
   font-weight: 300;
   letter-spacing: 2px;
-  background: #fff; }
+  background: #fff;
+ }
 
 h1 {
-  color: #e67a00;
+  color: rgba(42, 59, 67, 1);
   font-size: 45px;
   letter-spacing: 10px;
-  margin: 10px; }
+  margin: 10px;
+}
 
 h2 {
   font-weight: 300; }
@@ -23,27 +27,46 @@ h3 {
   font-weight: 300; }
 
 .App {
-  text-align: center; }
+  text-align: center;
+}
 
 .Title {
-  background-color: #2A3B43;
-  border: solid 2px #2A3B43;
-  box-shadow: 2px 2px 5px #AFDDF1;
-  text-align: center;
+  font-style: italic;
+  // box-shadow: 2px 2px 5px rgba(42, 59, 67, 0.24);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   margin: auto;
   margin-top: 30px;
-  width: 750px;
-  padding: 5px 10px; }
+  width: 600px;
+  padding: 5px 10px;
+
+  h1:first-child {
+    position: relative;
+    text-align: left;
+  }
+  h1:last-child {
+    color: #B66100;
+    position: relative;
+    text-align: right;
+  }
+  .cross_line {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background-color: #2A3B43;
+    transform: skew(-35deg, 0deg);
+    margin-left: 390px;
+    margin-top: 15px;
+  }
+}
 
 .Main {
-  background: linear-gradient(0deg, #E2F6FF, #E2F6FF, #E2F6FF, #E2F6FF, #AFDDF1);
-  box-shadow: 2px 2px 5px #AFDDF1;
-  border: solid 2px #2A3B43;
   text-align: center;
   margin: auto;
   width: 750px;
   padding: 10px;
-  min-height: 400px; }
+  min-height: 400px;
+}
 
 .Tasks-box {
   text-align: left;
@@ -51,7 +74,8 @@ h3 {
   position: relative;
   width: 350px;
   padding-left: 40px;
-  margin: 10px 0px 30px 0px; }
+  margin: 10px 0px 30px 0px;
+ }
 
 .Controller {
   display: inline-block;
@@ -62,7 +86,8 @@ h3 {
   color: #B66100;
   line-height: .5;
   text-align: center;
-  width: 350px; }
+  width: 350px;
+ }
 
 .Analog {
   margin: 10px 50px 10px 50px; }
@@ -81,7 +106,8 @@ h3 {
   height: 45px;
   font-size: 18px;
   border: 1px solid #ccc;
-  box-shadow: 2px 2px 5px #002740; }
+  box-shadow: 2px 2px 5px #002740;
+  }
 
 .reset {
   color: #B66100;
@@ -90,37 +116,46 @@ h3 {
   height: 45px;
   font-size: 18px;
   border: 1px solid #ccc;
-  box-shadow: 2px 2px 5px #002740; }
+  box-shadow: 2px 2px 5px #002740;
+  }
 
 .display {
   font-family: "Roboto", monospace;
-  font-weight: 100; }
+  font-weight: 100;
+}
 
 button {
-  background: none;
+  background: #FFF;
   border: none;
+  color: #002740;
   cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
-  color: #B66100;
-  padding: 0 0; }
+  padding: 0 0;
+  }
 
 button:hover {
-  color: #AFDDF1; }
+  color: #618296;
+  }
 
 button:focus {
-  outline: none; }
+  outline: none;
+  }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px; }
+    width: 10px;
+}
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fff; }
+    background: #fff;
+}
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; }
+    background: #888;
+}
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; }
+    background: #555;
+}

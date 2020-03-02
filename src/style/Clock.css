@@ -1,13 +1,11 @@
 .clock {
-  transform: scale(0.8);
+  transform: scale(1);
   width: 200px;
   height: 200px;
-  background: #E2F6FF;
-  border: 3px solid #2A3B43;
+  border: 1px solid #7e9099;
   border-radius: 50%;
   position: relative;
-  margin: auto;
-  box-shadow: -3px -3px #2A3B43; }
+  margin: auto; }
   .clock:after {
     content: '';
     display: block;
@@ -28,16 +26,16 @@
     transform-origin: bottom center;
     text-align: center; }
     .clock .clock__tick.clock__tick--minutes {
-      width: 2px;
+      width: 1px;
       height: 50px;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-bottom: 60px solid #2A3B43;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 70px solid #2A3B43;
       z-index: 2;
       transform: translate(-50%, -100%);
       overflow: hidden; }
     .clock .clock__tick.clock__tick--seconds {
-      width: 3px;
+      width: 1px;
       height: 85px;
       background: #B66100;
       z-index: 1;
@@ -49,11 +47,11 @@
   display: block;
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 18px solid #2A3B43;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #7e9099;
   text-align: center;
-  top: 4px;
+  top: 5px;
   left: 50%;
   transform-origin: top center;
   transform: translate(-50%, -50%); }
@@ -68,21 +66,18 @@
   transform: translate(-50%, -50%); }
 
 .play {
-  background: url(/images/round_play_circle_filled_black_18dp.png) no-repeat center;
   background-size: 50px;
-  background-color: #E6F4F1;
   border-radius: 50%;
-  box-shadow: 2px 2px #2A3B43;
+  border: .5px solid #002740;
+  box-shadow: 2px 2px #7e9099;
   height: 40px;
   width: 40px;
   z-index: 3; }
 
 .pause {
-  background: url(/images/round_pause_circle_filled_black_18dp.png) no-repeat center;
   background-size: 50px;
-  background-color: #E6F4F1;
   border-radius: 50%;
-  box-shadow: 2px 2px #2A3B43;
+  box-shadow: 2px 2px #7e9099;
   height: 40px;
   width: 40px;
   z-index: 3; }
