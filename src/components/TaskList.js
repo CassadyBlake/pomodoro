@@ -9,7 +9,8 @@ class TaskList extends Component {
 
     this.state = {
       tasks: [],
-      value: undefined
+      value: undefined,
+      hover: null,
     };
 
     this.tasksRef = this.props.firebase.database().ref('tasks');
@@ -33,6 +34,10 @@ class TaskList extends Component {
       this.setState({ value: event.target.value });
   }
 
+  handleHoverState = (index) => {
+    this.setState({ hover: index })
+  }
+
   handleSubmit = (event) => {
     this.tasksRef.push({
       name: this.state.value,
@@ -45,26 +50,33 @@ class TaskList extends Component {
   render() {
     return(
       <div className="task-display">
-          <form className="form-task" onSubmit={this.handleSubmit}>
-              <h2>Add a Task</h2>
-              <div className="tasks">
-                  <label>
-                    <input type="text" className="addInput" placeholder="type new task name" value={this.state.value} onChange={this.handleChange} />
-                  </label>
-                  <button type="submit" className="btn submit" value="Create Task">Add</button>
+        <div className="task-list" >
+          {
+            this.state.tasks.map( (task, index) =>
+              <div className= "tasks" key={index}>
+                <div className="taskName">- &nbsp;{ task.name }</div>
+                <button 
+                  className="delete" 
+                  onClick={() => this.deleteTaskClick(task.key)}
+                  onMouseEnter={() => this.handleHoverState(index)}
+                  onMouseLeave={() => this.handleHoverState(null)}
+                >
+                  <i className="material-icons">{ this.state.hover === index ? 'delete' : 'check_circle' }</i>
+                </button>
               </div>
-            </form>
-            <h2>Tasks to Complete</h2>
-            <div className="task-list" >
-                {
-                  this.state.tasks.map( (task, index) =>
-                    <div className= "tasks" key={index}>
-                      <div className="taskName">&nbsp;{ task.name }</div>
-                      <button className="delete" onClick={() => this.deleteTaskClick(task.key)}></button>
-                    </div>
-                ).reverse()
-                }
-            </div>
+            ).reverse()
+          }
+        </div>
+        <form className="form-task" onSubmit={this.handleSubmit}>
+          <div className="tasks">
+              <label>
+                <input type="text" className="addInput" placeholder="type new task name" value={this.state.value} onChange={this.handleChange} />
+              </label>
+              <button type="submit" className="submit" value="Create Task">
+                <i className="material-icons">add</i>
+              </button>
+          </div>
+        </form>
       </div>
     );
   }

@@ -5,6 +5,8 @@ import './style/App.css';
 import './style/Clock.css';
 import TaskList from './components/TaskList';
 
+// store all break, longBreak and work in currentState...
+
 
   // Initialize Firebase
   var config = {
@@ -32,7 +34,9 @@ class App extends Component {
       longBreakTime: 1800,
       sessionCount: 0,
       isCounting: false,
-      onBreak: false
+      onBreak: false,
+      onLongBreak: false,
+      currentState: "- WORKING -",
     };
 
     this.timer = 0;
@@ -42,7 +46,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let newTimeRem = this.state.workTime;
+    let newTimeRem = 0;
     this.setState({ timeRemaining: newTimeRem });
     this.updateClock(newTimeRem);
   }
@@ -52,56 +56,79 @@ class App extends Component {
     this.setState({ timeRemaining: timeRem })
     if(this.state.isCounting) {
       clearInterval(this.timer);
-      this.setState({ isCounting: false });
+      this.setState({ isCounting: false, currentState: "- PAUSED -" });
     } else {
-      this.timer = setInterval(this.countDown, 1000);
-      this.setState({ isCounting: true })
+      this.timer = setInterval(this.countDown, 50);
+      this.setState({ isCounting: true });
+      if(this.state.onBreak) {
+        this.setState({ currentState: "- BREAK -" });
+        document.getElementById('end_marker').style.transform = "translate(-50%, 0%) rotate(30deg)";
+      } else if(this.state.onLongBreak) {
+        this.setState({ currentState: "- LUNCH -" });
+        document.getElementById('end_marker').style.transform = "translate(-50%, 0%) rotate(180deg)";
+      } else {
+        this.setState({ currentState: "- WORKING -" });
+        console.log(document.getElementById)
+        document.getElementById('end_marker').style.transform = "translate(-50%, 0%) rotate(150deg)";
+      }
+      
     }
     console.log(this.timer)
   }
 
   resetTimer() {
     clearInterval(this.timer);
-      if (!this.state.onBreak) {
-        this.setState({ timeRemaining: this.state.workTime, isCounting: false });
-        this.updateClock(this.state.workTime)
-      }
-      else {
-        this.setState({ timeRemaining: this.state.breakTime, isCounting: false });
-        this.updateClock(this.state.breakTime)
-      }
+    this.setState({ timeRemaining: 0, isCounting: false });
+    this.updateClock(0);
   };
 
   countDown() {
-      let newTimeRem = this.state.timeRemaining - 1;
-      this.setState({ timeRemaining: newTimeRem });
-      this.updateClock(newTimeRem);
+    let newTimeRem = this.state.timeRemaining + .05;
+    this.setState({ timeRemaining: newTimeRem });
+    this.updateClock(newTimeRem);
 
-      if (newTimeRem <= 0) {
-
+    if (this.state.onBreak) {
+      if(newTimeRem >= this.state.breakTime) {
         comSound.play();
-
+        
         clearInterval(this.timer);
-        if (!this.state.onBreak) {
-          let newSessionCount = this.state.sessionCount + 1;
-          this.setState({ timeRemaining: this.state.breakTime, sessionCount: newSessionCount, isCounting: false, onBreak: true });
-          this.updateClock(this.state.breakTime);
-          if (newSessionCount >= 4) {
-            this.setState({ timeRemaining: this.state.longBreakTime, sessionCount: 0 })
-            this.updateClock(this.state.longBreakTime);
-          }
-        }
-        else {
-          this.setState({ timeRemaining: this.state.workTime, isCounting: false, onBreak: false })
+        this.updateClock(0);
+        this.setState({ timeRemaining: 0, isCounting: false, onBreak: false, onLongBreak: false, currentState: "- WORKING -" });
+      }
+    } else if(this.state.onLongBreak) {
+      if(newTimeRem >= this.state.longBreakTime) {
+        comSound.play();
+        
+        clearInterval(this.timer);
+        this.updateClock(0);
+        this.setState({ timeRemaining: 0, isCounting: false, onBreak: false, onLongBreak: false, currentState: "- WORKING -" });
+      }
+    } else {
+      if(newTimeRem >= this.state.workTime) {
+        comSound.play();
+        clearInterval(this.timer);
+        let newSessionCount = this.state.sessionCount + 1;
+        this.setState({ timeRemaining: 0, sessionCount: newSessionCount, isCounting: false, onBreak: true, currentState: "- BREAK -" });
+        this.updateClock(0);
+        if (newSessionCount >= 4) {
+          this.setState({ timeRemaining: 0, sessionCount: 0, onBreak: false, onLongBreak: true, currentState: "- LUNCH -" });
         }
       }
-  };
+    }
+  }
 
   updateClock(time) {
       let minutes = Math.floor(time / 60);
-      let angleMinutes = (time / 60) * 6;
+      // console.log("time:", time);
+      // console.log("minutes:", minutes);
+      let angleMinutes = (time / 60) * 6 ;
+      // console.log("angle minutes:", angleMinutes);
       let angleSeconds = ((time - (minutes * 60)) * 60) / 10;
-
+      // console.log("angle seconds:", angleSeconds);
+      if(time === 0) {
+        angleMinutes = 0;
+        angleSeconds = 0;
+      }
       document.getElementById('js-seconds').style.transform = "translate(-50%, -100%) rotate(" + angleSeconds + "deg)";
       document.getElementById('js-minutes').style.transform = "translate(-50%, -100%) rotate(" + angleMinutes + "deg)";
   }
@@ -110,7 +137,7 @@ class App extends Component {
     let minutes = Math.floor(timeInSeconds / 60);
     let seconds = Math.floor(timeInSeconds - (minutes * 60));
 
-    if(!timeInSeconds) { return "--:--" }
+    if(!timeInSeconds) { return "00:00" }
 
     minutes = minutes < 10 ? "0" + minutes: minutes;
     seconds = seconds < 10 ? "0" + seconds: seconds;
@@ -128,37 +155,58 @@ class App extends Component {
   render() {
     return (
     <div className="body">
-      <div className="Title">
-        <div className="cross_line"></div>
-        <h1>POMODORO</h1>
-        <h1>TIMER</h1>
-      </div>
       <div className="Main">
+        <div className="Title">
+          <h1>POMODORO</h1>
+          <div className="cross_line"></div>
+          <h1>TIMER</h1>
+        </div>
+        <div className="container">
+          <div className="clock_container">
           <div className="Controller">
-              <div className="Analog">
-                  <div className="clock">
-                    <div className="end_marker"></div>
-                    <button onClick={ this.handlePausePlayClick } className={ this.state.isCounting ? "pp pause" : "pp play" } >
-                      <i class="material-icons md-dark">
-                        {this.state.isCounting ? 'pause' : 'play_arrow'}
-                      </i>
-                    </button>
-                    <div id ="js-minutes" className="clock__tick clock__tick--minutes">
-                    </div>
-                    <div id ="js-seconds" className="clock__tick clock__tick--seconds">
-                    </div>
-                  </div>
-              </div>
               <div className="display">
                 {this.formatTime(this.state.timeRemaining)}
               </div>
-              <button type="button" className={ this.state.timeRemaining !== 1500 ? "btn reset" : "btn start" } onClick={ this.state.timeRemaining !== 1500 ? this.resetTimer : this.handlePausePlayClick} >{ this.state.timeRemaining !== 1500 ? "Reset" : "Start" }</button>
+              <div className="button_box">
+                <div 
+                  className="btn" 
+                  onClick={ !this.state.isCounting ? this.handlePausePlayClick : null }
+                >
+                  <i className="material-icons md-dark"> play_arrow </i>
+                </div>
+                <div 
+                  className="btn" 
+                  onClick={ this.state.isCounting ? this.handlePausePlayClick : null }
+                >
+                  <i className="material-icons md-dark"> pause </i>
+                </div>
+                <div 
+                  className="btn"
+                  onClick={ this.resetTimer }
+                >
+                  <i className="material-icons md-dark">restore</i>
+                </div>
+              </div>
+            </div>
+            <div className="Analog">
+                <div className="clock">
+                  <div className="current-state">{ this.state.currentState }</div>
+                  <div className="start_marker"></div>
+                  <div id ="end_marker" className="end_marker twenty_five"></div>
+                  <div id ="js-minutes" className="clock__tick clock__tick--minutes">
+                  </div>
+                  <div id ="js-seconds" className="clock__tick clock__tick--seconds">
+                  </div>
+                </div>
+            </div>
           </div>
+          
           <div className="Tasks-box">
-              < TaskList
-                firebase={firebase}
-              />
+            < TaskList
+              firebase={firebase}
+            />
           </div>
+        </div>
       </div>
     </div>
     );

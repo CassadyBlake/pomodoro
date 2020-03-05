@@ -1,27 +1,31 @@
 @import url("https://fonts.googleapis.com/css?family=Muli");
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
-@import url('https://fonts.googleapis.com/css?family=Roboto:100|Rajdhani:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap');
+
 html {
     height: 100%;
 }
 
 body {
-  font-family: 'Comfortaa', serif;
+  font-family: 'Roboto', serif;
   font-weight: 300;
   letter-spacing: 2px;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
  }
 
 h1 {
   color: rgba(42, 59, 67, 1);
   font-size: 45px;
-  letter-spacing: 10px;
+  letter-spacing: 20px;
   margin: 10px;
 }
 
 h2 {
-  font-weight: 300; }
+  font-weight: 400; }
 
 h3 {
   font-weight: 300; }
@@ -30,107 +34,112 @@ h3 {
   text-align: center;
 }
 
+.Main {
+  text-align: center;
+  margin: 2rem 5rem;
+  max-width: 900px;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
 .Title {
+  font-family: 'Comfortaa', serif;
   font-style: italic;
   // box-shadow: 2px 2px 5px rgba(42, 59, 67, 0.24);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  margin: auto;
-  margin-top: 30px;
-  width: 600px;
   padding: 5px 10px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
   h1:first-child {
     position: relative;
-    text-align: left;
   }
   h1:last-child {
     color: #B66100;
     position: relative;
     text-align: right;
+    top: 30px;
   }
   .cross_line {
-    position: absolute;
+    position: relative;
     width: 2px;
-    height: 100px;
+    height: 90px;
     background-color: #2A3B43;
     transform: skew(-35deg, 0deg);
-    margin-left: 390px;
-    margin-top: 15px;
   }
-}
-
-.Main {
-  text-align: center;
-  margin: auto;
-  width: 750px;
-  padding: 10px;
-  min-height: 400px;
 }
 
 .Tasks-box {
   text-align: left;
   display: inline-block;
   position: relative;
-  width: 350px;
-  padding-left: 40px;
-  margin: 10px 0px 30px 0px;
+  width: 100%;
+  margin: 2rem 0rem;
  }
 
-.Controller {
-  display: inline-block;
+.clock_container {
   position: relative;
-  vertical-align: top;
-  font-size: 100px;
-  font-family: 'Rajdhani', monospace, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.Controller {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: 'Roboto', monospace, sans-serif;
   color: #B66100;
-  line-height: .5;
   text-align: center;
-  width: 350px;
+  margin: 2rem 0rem 1rem 0rem;
  }
 
 .Analog {
-  margin: 10px 50px 10px 50px; }
-
-.btn {
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 700;
-  width: 100px;
-  font-size: 18px;
-  padding: 10px 0px; }
-
-.start {
-  color: #B66100;
-  background-color: #E6F4F1;
-  width: 100px;
-  height: 45px;
-  font-size: 18px;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 5px #002740;
-  }
-
-.reset {
-  color: #B66100;
-  background-color: #E6F4F1;
-  width: 100px;
-  height: 45px;
-  font-size: 18px;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 5px #002740;
-  }
+  margin: 0px 50px; 
+}
 
 .display {
   font-family: "Roboto", monospace;
-  font-weight: 100;
+  font-weight: 300;
+  font-size: 80px;
+  letter-spacing: 12px;
+  text-align: center;
+  padding-left: 1rem;
 }
 
-button {
-  background: #FFF;
-  border: none;
-  color: #002740;
-  cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
-  padding: 0 0;
+.button_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .btn {
+    display: inline;
+    background: #FFF;
+    border: none;
+    color: #002740;
+    cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
+    
+    &:nth-child(2) {
+      padding: 0 4rem;
+    }
+
+    .material-icons {
+      font-size: 32px !important;
+    }
   }
+}
+
 
 button:hover {
   color: #618296;
