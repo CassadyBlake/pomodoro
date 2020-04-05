@@ -1,51 +1,83 @@
 .task-list {
   display: flex;
   flex-direction: column;
+  width: 450px;
 }
 
 .tasks {
   display: flex;
   flex-direction: row;
   color: #2A3B43;
-  padding: 5px 0px 5px 10px;
+  padding-left: 10px;
   margin-bottom: 5px;
   font-size: 18px;
-  width: 450px;
   justify-content: space-between;
+  overflow: hidden;
+  background-color: white;
   // box-shadow: 4px 2px 5px #2A3B43;
+
+  &.form {
+    background-color: transparent;
+    padding-left: 0px;
+  }
 }
 
 .taskName {
-  display: inline;
+  display: flex;
   vertical-align: top;
-  line-height: 40px;
-  overflow-wrap: break-word;
+  margin: 10px 0;
+}
+.form-task {
+  margin-right: 0;
 }
 
 .submit {
   border: .5px solid rgba(42, 59, 67, 0.164);
-  border-radius: 100px;
-  font-size: 18px;
-  height: 50px;
-  width: 50px;
-  box-shadow: 2px 2px 2px rgb(126, 144, 153);
-
+  border-radius: 0px;
+  font-size: 24px;
+  // box-shadow: 2px 2px 2px rgb(0, 0, 0);
+  width: 60px;
+  height: 60px;
+  
   .material-icons {
     font-size: 18px;
   }
 }
 
-.delete {
-  display: inline;
+.task-button-box {
   position: relative;
-  border-radius: 100px;
-  border: none;
-  font-size: 18px;
-  height: 50px;
-  width: 50px;
+  display: flex;
+  width: 120px;
+  animation-duration: .5s;
+  animation-name: slidein;
+}
 
+@keyframes slidein {
+  from {
+    right: -120px;
+  }
+
+  to {
+    right:0;
+  }
+}
+
+.task-button {
+  position: relative;
+  border: none;
+  font-size: 24px;
+  height: 60px;
+  width: 60px;
+
+  &.delete {
+    background-color: rgb(182, 58, 0);
+  }
+  &.complete {
+    background-color: rgb(80, 131, 80);
+  }
   &:hover {
     border: .5px solid rgba(42, 59, 67, 0.164);
+    color: white;
   }
 }
 label {
@@ -53,15 +85,15 @@ label {
 }
 
 .addInput {
+  position: relative;
   color: #B66100;
   background-color: #fff;
   border: .5px solid rgba(42, 59, 67, 0.164);
   border-radius: 10px;
   // border-color: #2A3B43;
   // border-style: solid;
-  width: 90%;
   padding: 1rem 1rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   font-size: 18px;
   font-weight: 300;
  }

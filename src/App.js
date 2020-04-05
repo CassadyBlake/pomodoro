@@ -163,7 +163,7 @@ class App extends Component {
         </div>
         <div className="container">
           <div className="clock_container">
-          <div className="Controller">
+            <div className="Controller">
               <div className="display">
                 {this.formatTime(this.state.timeRemaining)}
               </div>

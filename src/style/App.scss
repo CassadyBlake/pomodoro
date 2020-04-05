@@ -48,6 +48,9 @@ h3 {
 .container {
   display: flex;
   flex-direction: row;
+  border-radius: 10px;
+  border: 1px solid rgba(42, 59, 67, 0.164);
+  margin: 2rem 0;
 }
 
 .Title {
@@ -86,7 +89,10 @@ h3 {
   display: inline-block;
   position: relative;
   width: 100%;
-  margin: 2rem 0rem;
+  padding: 2rem 2rem;
+  background-color: rgb(228, 228, 228);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
  }
 
 .clock_container {
@@ -106,7 +112,7 @@ h3 {
  }
 
 .Analog {
-  margin: 0px 50px; 
+  margin: 0 2rem 2rem 2rem; 
 }
 
 .display {

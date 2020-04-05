@@ -41,7 +41,10 @@ h3 {
 
 .container {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  border-radius: 10px;
+  border: 1px solid rgba(42, 59, 67, 0.164);
+  margin: 2rem 0; }
 
 .Title {
   font-family: 'Comfortaa', serif;
@@ -73,7 +76,10 @@ h3 {
   display: inline-block;
   position: relative;
   width: 100%;
-  margin: 2rem 0rem; }
+  padding: 2rem 2rem;
+  background-color: #e4e4e4;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px; }
 
 .clock_container {
   position: relative;
@@ -90,7 +96,7 @@ h3 {
   margin: 2rem 0rem 1rem 0rem; }
 
 .Analog {
-  margin: 0px 50px; }
+  margin: 0 2rem 2rem 2rem; }
 
 .display {
   font-family: "Roboto", monospace;

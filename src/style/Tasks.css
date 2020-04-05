@@ -1,55 +1,77 @@
 .task-list {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 450px; }
 
 .tasks {
   display: flex;
   flex-direction: row;
   color: #2A3B43;
-  padding: 5px 0px 5px 10px;
+  padding-left: 10px;
   margin-bottom: 5px;
   font-size: 18px;
-  width: 450px;
-  justify-content: space-between; }
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: white; }
+  .tasks.form {
+    background-color: transparent;
+    padding-left: 0px; }
 
 .taskName {
-  display: inline;
+  display: flex;
   vertical-align: top;
-  line-height: 40px;
-  overflow-wrap: break-word; }
+  margin: 10px 0; }
+
+.form-task {
+  margin-right: 0; }
 
 .submit {
   border: 0.5px solid rgba(42, 59, 67, 0.164);
-  border-radius: 100px;
-  font-size: 18px;
-  height: 50px;
-  width: 50px;
-  box-shadow: 2px 2px 2px #7e9099; }
+  border-radius: 0px;
+  font-size: 24px;
+  width: 60px;
+  height: 60px; }
   .submit .material-icons {
     font-size: 18px; }
 
-.delete {
-  display: inline;
+.task-button-box {
   position: relative;
-  border-radius: 100px;
+  display: flex;
+  width: 120px;
+  animation-duration: .5s;
+  animation-name: slidein; }
+
+@keyframes slidein {
+  from {
+    right: -120px; }
+  to {
+    right: 0; } }
+
+.task-button {
+  position: relative;
   border: none;
-  font-size: 18px;
-  height: 50px;
-  width: 50px; }
-  .delete:hover {
-    border: 0.5px solid rgba(42, 59, 67, 0.164); }
+  font-size: 24px;
+  height: 60px;
+  width: 60px; }
+  .task-button.delete {
+    background-color: #b63a00; }
+  .task-button.complete {
+    background-color: #508350; }
+  .task-button:hover {
+    border: 0.5px solid rgba(42, 59, 67, 0.164);
+    color: white; }
 
 label {
   width: 100%; }
 
 .addInput {
+  position: relative;
   color: #B66100;
   background-color: #fff;
   border: 0.5px solid rgba(42, 59, 67, 0.164);
   border-radius: 10px;
-  width: 90%;
   padding: 1rem 1rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   font-size: 18px;
   font-weight: 300; }
 
