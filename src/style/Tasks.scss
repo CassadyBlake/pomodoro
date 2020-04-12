@@ -1,7 +1,7 @@
 .task-list {
   display: flex;
   flex-direction: column;
-  width: 450px;
+  // width: 450px;
 }
 
 .tasks {
@@ -9,11 +9,15 @@
   flex-direction: row;
   color: #2A3B43;
   padding-left: 10px;
+  margin: 0 1rem 5px 1rem;
   margin-bottom: 5px;
   font-size: 18px;
   justify-content: space-between;
   overflow: hidden;
-  background-color: white;
+  background-color: rgb(245, 245, 245);
+  border-radius: 3px;
+  max-width: 500px;
+  min-width: 200px;
   // box-shadow: 4px 2px 5px #2A3B43;
 
   &.form {
@@ -23,9 +27,10 @@
 }
 
 .taskName {
-  display: flex;
+  position: relative;
+  flex-grow: 2;
   vertical-align: top;
-  margin: 10px 0;
+  padding: 10px 0;
 }
 .form-task {
   margin-right: 0;
@@ -33,51 +38,63 @@
 
 .submit {
   border: .5px solid rgba(42, 59, 67, 0.164);
-  border-radius: 0px;
+  border-radius: 10px;
   font-size: 24px;
-  // box-shadow: 2px 2px 2px rgb(0, 0, 0);
   width: 60px;
   height: 60px;
   
   .material-icons {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
+.task-button-display {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 120px;
+  right: 0;
 
+  .task-button:first-child {
+    border-left: solid 1px rgba(0, 0, 0, 0.26);
+  }
+}
 .task-button-box {
   position: relative;
   display: flex;
   width: 120px;
+  // border-left: solid 1px rgba(0, 0, 0, 0.26);
+  
   animation-duration: .5s;
   animation-name: slidein;
 }
 
 @keyframes slidein {
   from {
-    right: -120px;
+    right: -60px;
   }
 
   to {
-    right:0;
+    right: 0;
   }
 }
 
 .task-button {
   position: relative;
+  justify-self: end;
   border: none;
   font-size: 24px;
-  height: 60px;
+  min-width: 60px;
   width: 60px;
+  background-color: rgb(245, 245, 245);
 
   &.delete {
-    background-color: rgb(182, 58, 0);
+    color: rgb(182, 58, 0);
   }
   &.complete {
-    background-color: rgb(80, 131, 80);
+    color: rgb(80, 131, 80);
   }
   &:hover {
-    border: .5px solid rgba(42, 59, 67, 0.164);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.788);
   }
 }
 label {
@@ -86,16 +103,15 @@ label {
 
 .addInput {
   position: relative;
+  flex-grow: 2;
   color: #B66100;
   background-color: #fff;
   border: .5px solid rgba(42, 59, 67, 0.164);
   border-radius: 10px;
-  // border-color: #2A3B43;
-  // border-style: solid;
   padding: 1rem 1rem;
-  margin-right: 1rem;
   font-size: 18px;
   font-weight: 300;
+  border-right: solid 1px rgba(0, 0, 0, 0.26);
  }
 
 input:focus {
@@ -103,4 +119,8 @@ input:focus {
 
 .task-display {
   color: #2A3B43;
-   }
+}
+
+.green {
+  color: rgb(80, 131, 80);
+}

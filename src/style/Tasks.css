@@ -1,38 +1,51 @@
 .task-list {
   display: flex;
-  flex-direction: column;
-  width: 450px; }
+  flex-direction: column; }
 
 .tasks {
   display: flex;
   flex-direction: row;
   color: #2A3B43;
   padding-left: 10px;
+  margin: 0 1rem 5px 1rem;
   margin-bottom: 5px;
   font-size: 18px;
   justify-content: space-between;
   overflow: hidden;
-  background-color: white; }
+  background-color: whitesmoke;
+  border-radius: 3px;
+  max-width: 500px;
+  min-width: 200px; }
   .tasks.form {
     background-color: transparent;
     padding-left: 0px; }
 
 .taskName {
-  display: flex;
+  position: relative;
+  flex-grow: 2;
   vertical-align: top;
-  margin: 10px 0; }
+  padding: 10px 0; }
 
 .form-task {
   margin-right: 0; }
 
 .submit {
   border: 0.5px solid rgba(42, 59, 67, 0.164);
-  border-radius: 0px;
+  border-radius: 10px;
   font-size: 24px;
   width: 60px;
   height: 60px; }
   .submit .material-icons {
-    font-size: 18px; }
+    font-size: 24px; }
+
+.task-button-display {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 120px;
+  right: 0; }
+  .task-button-display .task-button:first-child {
+    border-left: solid 1px rgba(0, 0, 0, 0.26); }
 
 .task-button-box {
   position: relative;
@@ -43,40 +56,45 @@
 
 @keyframes slidein {
   from {
-    right: -120px; }
+    right: -60px; }
   to {
     right: 0; } }
 
 .task-button {
   position: relative;
+  justify-self: end;
   border: none;
   font-size: 24px;
-  height: 60px;
-  width: 60px; }
+  min-width: 60px;
+  width: 60px;
+  background-color: whitesmoke; }
   .task-button.delete {
-    background-color: #b63a00; }
+    color: #b63a00; }
   .task-button.complete {
-    background-color: #508350; }
+    color: #508350; }
   .task-button:hover {
-    border: 0.5px solid rgba(42, 59, 67, 0.164);
-    color: white; }
+    background-color: rgba(255, 255, 255, 0.788); }
 
 label {
   width: 100%; }
 
 .addInput {
   position: relative;
+  flex-grow: 2;
   color: #B66100;
   background-color: #fff;
   border: 0.5px solid rgba(42, 59, 67, 0.164);
   border-radius: 10px;
   padding: 1rem 1rem;
-  margin-right: 1rem;
   font-size: 18px;
-  font-weight: 300; }
+  font-weight: 300;
+  border-right: solid 1px rgba(0, 0, 0, 0.26); }
 
 input:focus {
   outline: none; }
 
 .task-display {
   color: #2A3B43; }
+
+.green {
+  color: #508350; }

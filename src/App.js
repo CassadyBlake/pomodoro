@@ -157,9 +157,9 @@ class App extends Component {
     <div className="body">
       <div className="Main">
         <div className="Title">
-          <h1>POMODORO</h1>
+          <span>POMODORO</span>
           <div className="cross_line"></div>
-          <h1>TIMER</h1>
+          <span>TIMER</span>
         </div>
         <div className="container">
           <div className="clock_container">

@@ -9,11 +9,12 @@ class TaskList extends Component {
 
     this.state = {
       tasks: [],
-      value: undefined,
+      value: '',
       hover: null,
     };
 
     this.tasksRef = this.props.firebase.database().ref('tasks');
+    this.firebase = this.props.firebase.database();
   }
 
   componentDidMount() {
@@ -24,14 +25,23 @@ class TaskList extends Component {
       });
   }
   deleteTaskClick = (taskKey) => {
-
     this.tasksRef.child(taskKey).remove();
     this.setState({ tasks: this.state.tasks.filter(task => taskKey !== task.key)});
   }
 
   completeTaskClick = (taskKey) => {
-    console.log("complete:", this.tasksRef.child(taskKey).completed);
-    this.tasksRef.child(taskKey).completed = true;
+    console.log("complete:", taskKey);
+    const selectedTask = this.firebase.ref(`tasks/${taskKey}`);
+    selectedTask.update({ completed: true });
+    this.setState({ tasks: this.state.tasks.map( task => {
+      console.log("task map:", task)
+      if(task.key === taskKey) {
+        let newTask = task;
+        newTask.completed = true;
+        return newTask;
+      }
+      return task;
+    })});
   }
 
   handleChange = (event) => {
@@ -43,11 +53,13 @@ class TaskList extends Component {
   }
 
   handleSubmit = (event) => {
-    this.tasksRef.push({
-      name: this.state.value,
-      completed: false
-    });
-    this.setState({ value: '' });
+    if(this.state.value) {
+      this.tasksRef.push({
+        name: this.state.value,
+        completed: false
+      });
+      this.setState({ value: '' });
+    }
     event.preventDefault();
   }
 
@@ -65,32 +77,36 @@ class TaskList extends Component {
                 onMouseLeave={() => this.handleHoverState(null)}
               >
                 <div className="taskName">- &nbsp;{ task.name }</div>
-                
+                <div className="task-button-display">
                   { this.state.hover === index ? (
                     <div className="task-button-box">
-                      <button
-                        className="task-button delete"
-                        onClick={() => this.deleteTaskClick(task.key)}
-                      >
-                        <i className="material-icons">delete</i>
-                      </button>
                       <button
                         className="task-button complete"
                         onClick={() => this.completeTaskClick(task.key)}
                       >
                         <i className="material-icons">check</i>
                       </button>
+                      <button
+                        className="task-button delete"
+                        onClick={() => this.deleteTaskClick(task.key)}
+                      >
+                        <i className="material-icons">delete</i>
+                      </button>
                     </div>
                   ) : (
-                    <button 
-                      className="task-button" 
-                      // onClick={() => this.deleteTaskClick(task.key)}
-                      // onMouseEnter={() => this.handleHoverState(index)}
-                      // onMouseLeave={() => this.handleHoverState(null)}
-                    >
-                      <i className="material-icons">{ task.completed ? 'check_box' : 'check_box_outline_blank' }</i>
-                    </button>
+                      <button 
+                        className="task-button" 
+                        // onClick={() => this.deleteTaskClick(task.key)}
+                        // onMouseEnter={() => this.handleHoverState(index)}
+                        // onMouseLeave={() => this.handleHoverState(null)}
+                      >
+                        { task.completed 
+                          ? <i className="material-icons  green">check_box</i>
+                          : <i className="material-icons">check_box_outline_blank</i>
+                        }
+                      </button>
                   )}
+                </div>
               </div>
             ).reverse()
           }
