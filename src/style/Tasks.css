@@ -30,11 +30,15 @@
   margin-right: 0; }
 
 .submit {
-  border: 0.5px solid rgba(42, 59, 67, 0.164);
-  border-radius: 10px;
+  border-radius: 30px;
   font-size: 24px;
-  width: 60px;
-  height: 60px; }
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  padding-top: 5px;
+  background-color: #e4e4e4; }
+  .submit:hover {
+    background-color: rgba(255, 255, 255, 0.89); }
   .submit .material-icons {
     font-size: 24px; }
 
@@ -50,7 +54,6 @@
 .task-button-box {
   position: relative;
   display: flex;
-  width: 120px;
   animation-duration: .5s;
   animation-name: slidein; }
 

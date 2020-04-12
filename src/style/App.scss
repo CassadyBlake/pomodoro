@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 html {
     height: 100%;
 }
@@ -12,35 +16,37 @@ body {
   font-weight: 300;
   letter-spacing: 2px;
   background: #fff;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem 1rem 1rem;
+  text-align: center;
  }
+ .col-1 {width: 8.33%;}
+ .col-2 {width: 16.66%;}
+ .col-3 {width: 25%;}
+ .col-4 {width: 33.33%;}
+ .col-5 {width: 41.66%;}
+ .col-6 {width: 50%;}
+ .col-7 {width: 58.33%;}
+ .col-8 {width: 66.66%;}
+ .col-9 {width: 75%;}
+ .col-10 {width: 83.33%;}
+ .col-11 {width: 91.66%;}
+ .col-12 {width: 100%;}
 
-h1 {
-  color: rgba(42, 59, 67, 1);
-  font-size: 45px;
-  letter-spacing: 20px;
-  margin: 10px;
-}
+// .App {
+//   text-align: center;
+// }
 
-h2 {
-  font-weight: 400; }
-
-h3 {
-  font-weight: 300; }
-
-.App {
-  text-align: center;
-}
-
-.Main {
-  text-align: center;
-  margin: 1rem 0;
+.main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   position: relative;
+  text-align: center;
+  width: 100%;
 }
 
 .container {
@@ -56,17 +62,17 @@ h3 {
 .Title {
   font-family: 'Comfortaa', serif;
   font-style: italic;
-  font-size: 45px;
+  font-size: 30px;
   color: rgba(42, 59, 67, 1);
   // box-shadow: 2px 2px 5px rgba(42, 59, 67, 0.24);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 5px 10px;
-  width: 100%;
   text-align: left;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  min-width: 375px;
 
   span:first-child {
     position: relative;
@@ -80,7 +86,7 @@ h3 {
   .cross_line {
     position: relative;
     width: 2px;
-    height: 90px;
+    height: 60px;
     background-color: #2A3B43;
     transform: skew(-35deg, 0deg);
   }
@@ -95,6 +101,7 @@ h3 {
   background-color: rgb(228, 228, 228);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  min-width: 325px;
  }
 
 .clock_container {
@@ -102,6 +109,7 @@ h3 {
   position: relative;
   display: flex;
   flex-direction: column;
+  min-width: 275px;
 }
 
 .Controller {
@@ -152,11 +160,14 @@ h3 {
 
 button:hover {
   color: #618296;
-  }
+}
 
+button {
+  border: none;
+}
 button:focus {
   outline: none;
-  }
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -176,4 +187,10 @@ button:focus {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 }

@@ -68,6 +68,14 @@ class TaskList extends Component {
     return(
       <div className="task-display">
         <div className="task-list" >
+          <form className="form-task" onSubmit={this.handleSubmit}>
+            <div className="tasks form">
+                <input type="text" className="addInput" placeholder="type new task name" value={this.state.value} onChange={this.handleChange} />
+                <button type="submit" className="submit" value="Create Task">
+                  <i className="material-icons">add</i>
+                </button>
+            </div>
+          </form>
           {
             this.state.tasks.map( (task, index) =>
               <div 
@@ -80,12 +88,14 @@ class TaskList extends Component {
                 <div className="task-button-display">
                   { this.state.hover === index ? (
                     <div className="task-button-box">
-                      <button
-                        className="task-button complete"
-                        onClick={() => this.completeTaskClick(task.key)}
-                      >
-                        <i className="material-icons">check</i>
-                      </button>
+                      { !task.completed ? (
+                        <button
+                          className="task-button complete"
+                          onClick={() => this.completeTaskClick(task.key)}
+                        >
+                          <i className="material-icons">check</i>
+                        </button>
+                      ) : null}
                       <button
                         className="task-button delete"
                         onClick={() => this.deleteTaskClick(task.key)}
@@ -111,14 +121,6 @@ class TaskList extends Component {
             ).reverse()
           }
         </div>
-        <form className="form-task" onSubmit={this.handleSubmit}>
-          <div className="tasks form">
-              <input type="text" className="addInput" placeholder="type new task name" value={this.state.value} onChange={this.handleChange} />
-              <button type="submit" className="submit" value="Create Task">
-                <i className="material-icons">add</i>
-              </button>
-          </div>
-        </form>
       </div>
     );
   }

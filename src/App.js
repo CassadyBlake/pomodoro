@@ -154,58 +154,56 @@ class App extends Component {
 
   render() {
     return (
-    <div className="body">
-      <div className="Main">
-        <div className="Title">
-          <span>POMODORO</span>
-          <div className="cross_line"></div>
-          <span>TIMER</span>
+    <div className="main">
+      <div className="Title col-4">
+        <span>POMODORO</span>
+        <div className="cross_line"></div>
+        <span>TIMER</span>
+      </div>
+      <div className="container col-12">
+        <div className="clock_container col-6">
+          <div className="Controller">
+            <div className="display">
+              {this.formatTime(this.state.timeRemaining)}
+            </div>
+            <div className="button_box">
+              <div 
+                className="btn" 
+                onClick={ !this.state.isCounting ? this.handlePausePlayClick : null }
+              >
+                <i className="material-icons md-dark"> play_arrow </i>
+              </div>
+              <div 
+                className="btn" 
+                onClick={ this.state.isCounting ? this.handlePausePlayClick : null }
+              >
+                <i className="material-icons md-dark"> pause </i>
+              </div>
+              <div 
+                className="btn"
+                onClick={ this.resetTimer }
+              >
+                <i className="material-icons md-dark">restore</i>
+              </div>
+            </div>
+          </div>
+          <div className="Analog">
+              <div className="clock">
+                <div className="current-state">{ this.state.currentState }</div>
+                <div className="start_marker"></div>
+                <div id ="end_marker" className="end_marker twenty_five"></div>
+                <div id ="js-minutes" className="clock__tick clock__tick--minutes">
+                </div>
+                <div id ="js-seconds" className="clock__tick clock__tick--seconds">
+                </div>
+              </div>
+          </div>
         </div>
-        <div className="container">
-          <div className="clock_container">
-            <div className="Controller">
-              <div className="display">
-                {this.formatTime(this.state.timeRemaining)}
-              </div>
-              <div className="button_box">
-                <div 
-                  className="btn" 
-                  onClick={ !this.state.isCounting ? this.handlePausePlayClick : null }
-                >
-                  <i className="material-icons md-dark"> play_arrow </i>
-                </div>
-                <div 
-                  className="btn" 
-                  onClick={ this.state.isCounting ? this.handlePausePlayClick : null }
-                >
-                  <i className="material-icons md-dark"> pause </i>
-                </div>
-                <div 
-                  className="btn"
-                  onClick={ this.resetTimer }
-                >
-                  <i className="material-icons md-dark">restore</i>
-                </div>
-              </div>
-            </div>
-            <div className="Analog">
-                <div className="clock">
-                  <div className="current-state">{ this.state.currentState }</div>
-                  <div className="start_marker"></div>
-                  <div id ="end_marker" className="end_marker twenty_five"></div>
-                  <div id ="js-minutes" className="clock__tick clock__tick--minutes">
-                  </div>
-                  <div id ="js-seconds" className="clock__tick clock__tick--seconds">
-                  </div>
-                </div>
-            </div>
-          </div>
-          
-          <div className="Tasks-box">
-            < TaskList
-              firebase={firebase}
-            />
-          </div>
+        
+        <div className="Tasks-box col-6">
+          < TaskList
+            firebase={firebase}
+          />
         </div>
       </div>
     </div>
