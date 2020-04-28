@@ -3,6 +3,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap');
 
+// #22333b - gunmetal
+// #eae0d5 - alabaster
+// #91c7b1 - Eton blue
+// #b33951 - Amaranth Purple
+
 * {
   box-sizing: border-box;
 }
@@ -110,6 +115,8 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 275px;
+  background-color: #22333b;
+  border-radius: 10px;
 }
 
 .Controller {
@@ -117,7 +124,7 @@ body {
   flex-direction: column;
   position: relative;
   font-family: 'Roboto', monospace, sans-serif;
-  color: #B66100;
+  color: #91c7b1;
   text-align: center;
   margin: 2rem 0rem 1rem 0rem;
  }
@@ -142,11 +149,15 @@ body {
 
   .btn {
     display: inline;
-    background: #FFF;
     border: none;
-    color: #002740;
+    color: #eae0d5;
     cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
     
+    &:hover {
+      cursor: pointer;
+      color: #91c7b1;
+    }
+
     &:nth-child(2) {
       padding: 0 4rem;
     }

@@ -189,7 +189,7 @@ class App extends Component {
           </div>
           <div className="Analog">
               <div className="clock">
-                <div className="current-state">{ this.state.currentState }</div>
+                <div className={ this.state.currentState === '- PAUSED -' ? "current-state pause" : "current-state"}>{ this.state.currentState }</div>
                 <div className="start_marker"></div>
                 <div id ="end_marker" className="end_marker twenty_five"></div>
                 <div id ="js-minutes" className="clock__tick clock__tick--minutes">

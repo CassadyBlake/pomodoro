@@ -116,14 +116,16 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 275px; }
+  min-width: 275px;
+  background-color: #22333b;
+  border-radius: 10px; }
 
 .Controller {
   display: flex;
   flex-direction: column;
   position: relative;
   font-family: 'Roboto', monospace, sans-serif;
-  color: #B66100;
+  color: #91c7b1;
   text-align: center;
   margin: 2rem 0rem 1rem 0rem; }
 
@@ -144,10 +146,12 @@ body {
   justify-content: center; }
   .button_box .btn {
     display: inline;
-    background: #FFF;
     border: none;
-    color: #002740;
+    color: #eae0d5;
     cursor: url(/images/baseline_play_arrow_black_18dp.png), auto; }
+    .button_box .btn:hover {
+      cursor: pointer;
+      color: #91c7b1; }
     .button_box .btn:nth-child(2) {
       padding: 0 4rem; }
     .button_box .btn .material-icons {
