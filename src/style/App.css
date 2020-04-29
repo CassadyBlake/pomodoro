@@ -12,10 +12,10 @@ body {
   font-family: 'Roboto', serif;
   font-weight: 300;
   letter-spacing: 2px;
-  background: #fff;
+  background: #22333bd5;
   align-items: center;
   justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 1rem 4rem;
   text-align: center; }
 
 .col-1 {
@@ -70,17 +70,18 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   border-radius: 10px;
-  border: 1px solid rgba(42, 59, 67, 0.164);
-  margin: 2rem 0; }
+  background-color: #eae0d5;
+  margin: 2rem 0;
+  overflow: hidden;
+  max-width: 900px; }
 
 .Title {
   font-family: 'Comfortaa', serif;
   font-style: italic;
   font-size: 30px;
-  color: #2a3b43;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding: 5px 10px;
+  color: #eae0d5;
+  margin-top: 1rem;
+  padding: 0 1rem;
   text-align: left;
   display: flex;
   flex-direction: row;
@@ -89,7 +90,7 @@ body {
   .Title span:first-child {
     position: relative; }
   .Title span:last-child {
-    color: #B66100;
+    color: #91c7b1;
     position: relative;
     text-align: right;
     top: 30px; }
@@ -97,7 +98,7 @@ body {
     position: relative;
     width: 2px;
     height: 60px;
-    background-color: #2A3B43;
+    background-color: #eae0d5;
     transform: skew(-35deg, 0deg); }
 
 .Tasks-box {
@@ -106,9 +107,6 @@ body {
   display: inline-block;
   position: relative;
   padding: 2rem 0rem;
-  background-color: #e4e4e4;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
   min-width: 325px; }
 
 .clock_container {
@@ -118,7 +116,8 @@ body {
   flex-direction: column;
   min-width: 275px;
   background-color: #22333b;
-  border-radius: 10px; }
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #22333b; }
 
 .Controller {
   display: flex;
@@ -156,12 +155,16 @@ body {
       padding: 0 4rem; }
     .button_box .btn .material-icons {
       font-size: 32px !important; }
+      .button_box .btn .material-icons.active {
+        color: #91c7b1; }
 
 button:hover {
-  color: #618296; }
+  color: #91c7b1; }
 
 button {
-  border: none; }
+  color: #eae0d5;
+  border: none;
+  background-color: transparent; }
 
 button:focus {
   outline: none; }
@@ -181,7 +184,3 @@ button:focus {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; }
-
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue; } }

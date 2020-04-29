@@ -36,7 +36,7 @@ class App extends Component {
       isCounting: false,
       onBreak: false,
       onLongBreak: false,
-      currentState: "- WORKING -",
+      currentState: "",
     };
 
     this.timer = 0;
@@ -78,7 +78,7 @@ class App extends Component {
 
   resetTimer() {
     clearInterval(this.timer);
-    this.setState({ timeRemaining: 0, isCounting: false });
+    this.setState({ timeRemaining: 0, isCounting: false, currentState: "" });
     this.updateClock(0);
   };
 
@@ -171,25 +171,27 @@ class App extends Component {
                 className="btn" 
                 onClick={ !this.state.isCounting ? this.handlePausePlayClick : null }
               >
-                <i className="material-icons md-dark"> play_arrow </i>
+                <button>
+                  <i className={this.state.isCounting ? "material-icons md-dark active" : "material-icons md-dark"}> play_arrow </i>
+                </button>
               </div>
               <div 
                 className="btn" 
                 onClick={ this.state.isCounting ? this.handlePausePlayClick : null }
               >
-                <i className="material-icons md-dark"> pause </i>
+                <button><i className={!this.state.isCounting ? "material-icons md-dark active" : "material-icons md-dark"}> pause </i></button>
               </div>
               <div 
                 className="btn"
                 onClick={ this.resetTimer }
               >
-                <i className="material-icons md-dark">restore</i>
+                <button><i className="material-icons md-dark">restore</i></button>
               </div>
             </div>
           </div>
           <div className="Analog">
               <div className="clock">
-                <div className={ this.state.currentState === '- PAUSED -' ? "current-state pause" : "current-state"}>{ this.state.currentState }</div>
+                <div className={ this.state.currentState !== '- WORKING -' ? "current-state pause" : "current-state"}>{ this.state.currentState }</div>
                 <div className="start_marker"></div>
                 <div id ="end_marker" className="end_marker twenty_five"></div>
                 <div id ="js-minutes" className="clock__tick clock__tick--minutes">

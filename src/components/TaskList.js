@@ -84,7 +84,8 @@ class TaskList extends Component {
                 onMouseEnter={() => this.handleHoverState(index)}
                 onMouseLeave={() => this.handleHoverState(null)}
               >
-                <div className="taskName">- &nbsp;{ task.name }</div>
+                <div className="bullet" />
+                <div className="taskName">{ task.name }</div>
                 <div className="task-button-display">
                   { this.state.hover === index ? (
                     <div className="task-button-box">
@@ -112,7 +113,7 @@ class TaskList extends Component {
                       >
                         { task.completed 
                           ? <i className="material-icons  green">check_box</i>
-                          : <i className="material-icons">check_box_outline_blank</i>
+                          : <i className="material-icons light">check_box_outline_blank</i>
                         }
                       </button>
                   )}
