@@ -1,3 +1,5 @@
+@import "./colors.scss";
+
 .task-list {
   display: flex;
   flex-direction: column;
@@ -14,11 +16,11 @@
   font-size: 18px;
   justify-content: space-between;
   overflow: hidden;
-  background-color: #fdf3e7;
+  background-color: $background;
   border-radius: 3px;
   max-width: 500px;
   min-width: 200px;
-  // box-shadow: 4px 2px 5px #2A3B43;
+  box-shadow: 2px 2px 5px #2A3B43;
 
   .bullet {
     align-self: center;
@@ -114,7 +116,7 @@
   font-size: 24px;
   min-width: 60px;
   width: 60px;
-  background-color: #fdf3e7;
+  // background-color: $alabaster;
 
   &.delete {
     color: #b33951;
@@ -123,7 +125,7 @@
     color: #91c7b1;
   }
   &:hover {
-    background-color: #fff9f2;
+    background-color: #ffffff;
   }
 }
 label {

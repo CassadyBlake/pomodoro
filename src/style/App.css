@@ -12,10 +12,9 @@ body {
   font-family: 'Roboto', serif;
   font-weight: 300;
   letter-spacing: 2px;
-  background: #22333bd5;
+  background: #f0f3f5;
   align-items: center;
   justify-content: center;
-  padding: 1rem 4rem;
   text-align: center; }
 
 .col-1 {
@@ -54,108 +53,80 @@ body {
 .col-12 {
   width: 100%; }
 
-.main {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  width: 100%; }
-
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  border-radius: 10px;
-  background-color: #eae0d5;
-  margin: 2rem 0;
-  overflow: hidden;
-  max-width: 900px; }
-
-.Title {
+.title {
   font-family: 'Comfortaa', serif;
   font-style: italic;
   font-size: 30px;
   color: #eae0d5;
-  margin-top: 1rem;
-  padding: 0 1rem;
-  text-align: left;
+  padding: 1rem 1rem;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  min-width: 375px; }
-  .Title span:first-child {
-    position: relative; }
-  .Title span:last-child {
+  min-width: 375px;
+  background: linear-gradient(0deg, #22333b, #2e434d); }
+  .title span:first-child {
+    position: relative;
+    margin-right: 1rem; }
+  .title span:last-child {
     color: #91c7b1;
     position: relative;
-    text-align: right;
-    top: 30px; }
-  .Title .cross_line {
-    position: relative;
-    width: 2px;
-    height: 60px;
-    background-color: #eae0d5;
-    transform: skew(-35deg, 0deg); }
+    margin-left: 1rem; }
 
-.Tasks-box {
-  flex-grow: 1;
-  text-align: left;
-  display: inline-block;
-  position: relative;
-  padding: 2rem 0rem;
-  min-width: 325px; }
-
-.clock_container {
-  flex-grow: 1;
-  position: relative;
+.main-container {
   display: flex;
   flex-direction: column;
-  min-width: 275px;
-  background-color: #22333b;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px #22333b; }
-
-.Controller {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  font-family: 'Roboto', monospace, sans-serif;
-  color: #91c7b1;
   text-align: center;
-  margin: 2rem 0rem 1rem 0rem; }
+  width: 100%;
+  padding: 1rem 4rem; }
+  .main-container .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #f0f3f5;
+    margin: 2rem 0;
+    overflow: hidden;
+    max-width: 900px; }
+    .main-container .container .clock-container {
+      flex-grow: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 275px;
+      background-color: #22333b;
+      border-radius: 5px;
+      margin-bottom: 1rem; }
+    .main-container .container .tasks-box {
+      flex-grow: 1;
+      text-align: left;
+      display: inline-block;
+      position: relative;
+      padding: 0rem 0rem;
+      min-width: 325px; }
 
-.Analog {
-  margin: 0 2rem 2rem 2rem; }
-
-.display {
-  font-family: "Roboto", monospace;
-  font-weight: 300;
-  font-size: 80px;
-  letter-spacing: 12px;
-  text-align: center;
-  padding-left: 1rem; }
-
-.button_box {
+.button-box {
   display: flex;
   flex-direction: row;
   justify-content: center; }
-  .button_box .btn {
+  .button-box .btn {
     display: inline;
     border: none;
     color: #eae0d5;
     cursor: url(/images/baseline_play_arrow_black_18dp.png), auto; }
-    .button_box .btn:hover {
+    .button-box .btn:hover {
       cursor: pointer;
       color: #91c7b1; }
-    .button_box .btn:nth-child(2) {
+    .button-box .btn:nth-child(2) {
       padding: 0 4rem; }
-    .button_box .btn .material-icons {
+    .button-box .btn .material-icons {
       font-size: 32px !important; }
-      .button_box .btn .material-icons.active {
+      .button-box .btn .material-icons.active {
         color: #91c7b1; }
 
 button:hover {
@@ -184,3 +155,7 @@ button:focus {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; }
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 0; } }

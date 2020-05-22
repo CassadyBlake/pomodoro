@@ -1,10 +1,27 @@
+.controller {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: 'Roboto', monospace, sans-serif;
+  color: #91c7b1;
+  text-align: center;
+  margin: 2rem 0rem 1rem 0rem; }
+  .controller .display {
+    font-family: "Roboto", monospace;
+    font-weight: 300;
+    font-size: 80px;
+    letter-spacing: 12px;
+    text-align: center;
+    padding-left: 1rem; }
+
 .clock {
+  display: inline-flex;
   width: 200px;
   height: 200px;
   border: 2px solid #22333b;
   border-radius: 50%;
   position: relative;
-  margin: auto;
+  margin: 0 2rem 2rem 2rem;
   background: #fff4e8;
   box-shadow: 2px 2px 20px 10px rgba(255, 255, 255, 0.151); }
   .clock:after {

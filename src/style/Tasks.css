@@ -12,10 +12,11 @@
   font-size: 18px;
   justify-content: space-between;
   overflow: hidden;
-  background-color: #fdf3e7;
+  background-color: #f0f3f5;
   border-radius: 3px;
   max-width: 500px;
-  min-width: 200px; }
+  min-width: 200px;
+  box-shadow: 2px 2px 5px #2A3B43; }
   .tasks .bullet {
     align-self: center;
     margin-right: 10px;
@@ -85,14 +86,13 @@
   border: none;
   font-size: 24px;
   min-width: 60px;
-  width: 60px;
-  background-color: #fdf3e7; }
+  width: 60px; }
   .task-button.delete {
     color: #b33951; }
   .task-button.complete {
     color: #91c7b1; }
   .task-button:hover {
-    background-color: #fff9f2; }
+    background-color: #ffffff; }
 
 label {
   width: 100%; }

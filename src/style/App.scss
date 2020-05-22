@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap');
-
-// #22333b - gunmetal
-// #eae0d5 - alabaster
-// #91c7b1 - Eton blue
-// #b33951 - Amaranth Purple
+@import "./colors.scss";
+// $gunmetal: #22333b;
+// $alabaster: #eae0d5;
+// $eton-blue: #91c7b1;
+// $amaranth-purple: #b33951;
 
 * {
   box-sizing: border-box;
@@ -20,129 +20,135 @@ body {
   font-family: 'Roboto', serif;
   font-weight: 300;
   letter-spacing: 2px;
-  background: #22333bd5;
+  background: $background;
   align-items: center;
   justify-content: center;
-  padding: 1rem 4rem;
   text-align: center;
  }
- .col-1 {width: 8.33%;}
- .col-2 {width: 16.66%;}
- .col-3 {width: 25%;}
- .col-4 {width: 33.33%;}
- .col-5 {width: 41.66%;}
- .col-6 {width: 50%;}
- .col-7 {width: 58.33%;}
- .col-8 {width: 66.66%;}
- .col-9 {width: 75%;}
- .col-10 {width: 83.33%;}
- .col-11 {width: 91.66%;}
- .col-12 {width: 100%;}
 
-// .App {
-//   text-align: center;
-// }
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
 
-.main {
+.title {
+  font-family: 'Comfortaa', serif;
+  font-style: italic;
+  font-size: 30px;
+  color: $alabaster;
+  padding: 1rem 1rem;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  min-width: 375px;
+  background: linear-gradient(0deg, #22333b, #2e434d);
+
+  span:first-child {
+    position: relative;
+    margin-right: 1rem;
+  }
+  span:last-child {
+    color: $eton-blue;
+    position: relative;
+    margin-left: 1rem;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   text-align: center;
   width: 100%;
-}
+  padding: 1rem 4rem;
 
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  border-radius: 10px;
-  background-color: #eae0d5;
-  margin: 2rem 0;
-  overflow: hidden;
-  max-width: 900px;
-}
+  
+  // .title {
+  //   font-family: 'Comfortaa', serif;
+  //   font-style: italic;
+  //   font-size: 30px;
+  //   color: $alabaster;
+  //   margin-top: 1rem;
+  //   padding: 0 1rem;
+  //   text-align: left;
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  //   min-width: 375px;
+  
+  //   span:first-child {
+  //     position: relative;
+  //   }
+  //   span:last-child {
+  //     color: $eton-blue;
+  //     position: relative;
+  //     text-align: right;
+  //     top: 30px;
+  //   }
+  //   .cross-line {
+  //     position: relative;
+  //     width: 2px;
+  //     height: 60px;
+  //     background-color: $alabaster;
+  //     transform: skew(-35deg, 0deg);
+  //   }
+  // }
 
-.Title {
-  font-family: 'Comfortaa', serif;
-  font-style: italic;
-  font-size: 30px;
-  color: #eae0d5;
-  // box-shadow: 2px 2px 5px rgba(42, 59, 67, 0.24);
-  margin-top: 1rem;
-  padding: 0 1rem;
-  text-align: left;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  min-width: 375px;
-
-  span:first-child {
-    position: relative;
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    // border-radius: 10px;
+    background: $background;
+    margin: 2rem 0;
+    overflow: hidden;
+    max-width: 900px;
+  
+    .clock-container {
+      flex-grow: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 275px;
+      background-color: $gunmetal;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      // box-shadow: 2px 2px 5px $gunmetal;
+    }
+  
+    .tasks-box {
+      flex-grow: 1;
+      text-align: left;
+      display: inline-block;
+      position: relative;
+      padding: 0rem 0rem;
+      // border-radius: 10px;
+      min-width: 325px;
+     }
   }
-  span:last-child {
-    color: #91c7b1;
-    position: relative;
-    text-align: right;
-    top: 30px;
-  }
-  .cross_line {
-    position: relative;
-    width: 2px;
-    height: 60px;
-    background-color: #eae0d5;
-    transform: skew(-35deg, 0deg);
-  }
+
 }
 
-.Tasks-box {
-  flex-grow: 1;
-  text-align: left;
-  display: inline-block;
-  position: relative;
-  padding: 2rem 0rem;
-  // border-radius: 10px;
-  min-width: 325px;
- }
 
-.clock_container {
-  flex-grow: 1;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 275px;
-  background-color: #22333b;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px #22333b;
-}
 
-.Controller {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  font-family: 'Roboto', monospace, sans-serif;
-  color: #91c7b1;
-  text-align: center;
-  margin: 2rem 0rem 1rem 0rem;
- }
 
-.Analog {
-  margin: 0 2rem 2rem 2rem; 
-}
 
-.display {
-  font-family: "Roboto", monospace;
-  font-weight: 300;
-  font-size: 80px;
-  letter-spacing: 12px;
-  text-align: center;
-  padding-left: 1rem;
-}
 
-.button_box {
+.button-box {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -150,12 +156,12 @@ body {
   .btn {
     display: inline;
     border: none;
-    color: #eae0d5;
+    color: $alabaster;
     cursor: url(/images/baseline_play_arrow_black_18dp.png), auto;
 
     &:hover {
       cursor: pointer;
-      color: #91c7b1;
+      color: $eton-blue;
     }
 
     &:nth-child(2) {
@@ -166,7 +172,7 @@ body {
       font-size: 32px !important;
       
       &.active {
-        color: #91c7b1;
+        color: $eton-blue;
       }
     }
   }
@@ -174,11 +180,11 @@ body {
 
 
 button:hover {
-  color: #91c7b1;
+  color: $eton-blue;
 }
 
 button {
-  color: #eae0d5;
+  color: $alabaster;
   border: none;
   background-color: transparent;
 }
@@ -208,6 +214,7 @@ button:focus {
 }
 
 @media only screen and (max-width: 600px) {
-  // body {
-  // }
+  body {
+    padding: 0;
+  }
 }
