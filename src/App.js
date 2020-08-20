@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
 import buzz from 'buzz';
 import './style/App.css';
 import './style/Clock.css';

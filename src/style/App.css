@@ -12,7 +12,7 @@ body {
   font-family: 'Roboto', serif;
   font-weight: 300;
   letter-spacing: 2px;
-  background: #f0f3f5;
+  background: linear-gradient(white, #ecf4fa);
   align-items: center;
   justify-content: center;
   text-align: center; }
@@ -88,7 +88,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background: #f0f3f5;
     margin: 2rem 0;
     overflow: hidden;
     max-width: 900px; }
@@ -101,7 +100,8 @@ body {
       min-width: 275px;
       background-color: #22333b;
       border-radius: 5px;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      box-shadow: 2px 2px 5px #22333b; }
     .main-container .container .tasks-box {
       flex-grow: 1;
       text-align: left;

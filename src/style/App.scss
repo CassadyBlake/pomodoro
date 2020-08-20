@@ -20,7 +20,7 @@ body {
   font-family: 'Roboto', serif;
   font-weight: 300;
   letter-spacing: 2px;
-  background: $background;
+  background: linear-gradient(white, $background);
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -112,7 +112,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     // border-radius: 10px;
-    background: $background;
+    // background: $background;
     margin: 2rem 0;
     overflow: hidden;
     max-width: 900px;
@@ -127,6 +127,7 @@ body {
       background-color: $gunmetal;
       border-radius: 5px;
       margin-bottom: 1rem;
+      box-shadow: 2px 2px 5px $gunmetal;
       // box-shadow: 2px 2px 5px $gunmetal;
     }
   
