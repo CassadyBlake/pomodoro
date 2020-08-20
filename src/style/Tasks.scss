@@ -16,11 +16,11 @@
   font-size: 18px;
   justify-content: space-between;
   overflow: hidden;
-  background-color: $background;
+  background-color: white;
+  border: solid 1px $alabaster;
   border-radius: 3px;
-  max-width: 500px;
   min-width: 200px;
-  box-shadow: 2px 2px 5px #2A3B43;
+
 
   .bullet {
     align-self: center;
@@ -43,6 +43,7 @@
     background-color: #22333b;
     padding-left: 0px;
     box-shadow: 1px 1px 5px #22333b;
+    border: none;
   }
 }
 

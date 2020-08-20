@@ -11,11 +11,12 @@ html {
 body {
   font-family: 'Roboto', serif;
   font-weight: 300;
-  letter-spacing: 2px;
   background: linear-gradient(white, #ecf4fa);
+  letter-spacing: 2px;
   align-items: center;
   justify-content: center;
-  text-align: center; }
+  text-align: center;
+  height: 100%; }
 
 .col-1 {
   width: 8.33%; }
@@ -56,7 +57,7 @@ body {
 .title {
   font-family: 'Comfortaa', serif;
   font-style: italic;
-  font-size: 30px;
+  font-size: 1.5rem;
   color: #eae0d5;
   padding: 1rem 1rem;
   width: 100%;
@@ -64,7 +65,8 @@ body {
   justify-content: center;
   display: flex;
   flex-direction: row;
-  min-width: 375px;
+  flex-wrap: nowrap;
+  min-width: 300px;
   background: linear-gradient(0deg, #22333b, #2e434d); }
   .title span:first-child {
     position: relative;
@@ -74,41 +76,33 @@ body {
     position: relative;
     margin-left: 1rem; }
 
-.main-container {
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   position: relative;
   text-align: center;
-  width: 100%;
-  padding: 1rem 4rem; }
-  .main-container .container {
+  max-width: 900px;
+  padding: 1rem;
+  margin: auto; }
+  .container .clock-container {
+    flex-grow: 1;
+    position: relative;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 2rem 0;
-    overflow: hidden;
-    max-width: 900px; }
-    .main-container .container .clock-container {
-      flex-grow: 1;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 275px;
-      background-color: #22333b;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-      box-shadow: 2px 2px 5px #22333b; }
-    .main-container .container .tasks-box {
-      flex-grow: 1;
-      text-align: left;
-      display: inline-block;
-      position: relative;
-      padding: 0rem 0rem;
-      min-width: 325px; }
+    flex-direction: column;
+    align-items: center;
+    min-width: 275px;
+    background-color: #22333b;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 5px #22333b; }
+  .container .tasks-container {
+    flex-grow: 1;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    padding: 0rem 0rem;
+    min-width: 325px; }
 
 .button-box {
   display: flex;
@@ -158,4 +152,7 @@ button:focus {
 
 @media only screen and (max-width: 600px) {
   body {
-    padding: 0; } }
+    padding: 0;
+    background: none; }
+  .container {
+    background: linear-gradient(white, #ecf4fa); } }

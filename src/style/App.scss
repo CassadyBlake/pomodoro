@@ -19,11 +19,12 @@ html {
 body {
   font-family: 'Roboto', serif;
   font-weight: 300;
-  letter-spacing: 2px;
   background: linear-gradient(white, $background);
+  letter-spacing: 2px;
   align-items: center;
   justify-content: center;
   text-align: center;
+  height: 100%;
  }
 
 .col-1 {width: 8.33%;}
@@ -42,7 +43,7 @@ body {
 .title {
   font-family: 'Comfortaa', serif;
   font-style: italic;
-  font-size: 30px;
+  font-size: 1.5rem;
   color: $alabaster;
   padding: 1rem 1rem;
   width: 100%;
@@ -50,7 +51,8 @@ body {
   justify-content: center;
   display: flex;
   flex-direction: row;
-  min-width: 375px;
+  flex-wrap: nowrap;
+  min-width: 300px;
   background: linear-gradient(0deg, #22333b, #2e434d);
 
   span:first-child {
@@ -64,90 +66,41 @@ body {
   }
 }
 
-.main-container {
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   position: relative;
   text-align: center;
-  width: 100%;
-  padding: 1rem 4rem;
-
+  max-width: 900px;
+  padding: 1rem;
+  margin: auto;
   
-  // .title {
-  //   font-family: 'Comfortaa', serif;
-  //   font-style: italic;
-  //   font-size: 30px;
-  //   color: $alabaster;
-  //   margin-top: 1rem;
-  //   padding: 0 1rem;
-  //   text-align: left;
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: space-between;
-  //   min-width: 375px;
-  
-  //   span:first-child {
-  //     position: relative;
-  //   }
-  //   span:last-child {
-  //     color: $eton-blue;
-  //     position: relative;
-  //     text-align: right;
-  //     top: 30px;
-  //   }
-  //   .cross-line {
-  //     position: relative;
-  //     width: 2px;
-  //     height: 60px;
-  //     background-color: $alabaster;
-  //     transform: skew(-35deg, 0deg);
-  //   }
-  // }
-
-  .container {
+  .clock-container {
+    flex-grow: 1;
+    position: relative;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-width: 275px;
+    background-color: $gunmetal;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 5px $gunmetal;
+    // box-shadow: 2px 2px 5px $gunmetal;
+  }
+
+  .tasks-container {
+    flex-grow: 1;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    padding: 0rem 0rem;
     // border-radius: 10px;
-    // background: $background;
-    margin: 2rem 0;
-    overflow: hidden;
-    max-width: 900px;
-  
-    .clock-container {
-      flex-grow: 1;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 275px;
-      background-color: $gunmetal;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-      box-shadow: 2px 2px 5px $gunmetal;
-      // box-shadow: 2px 2px 5px $gunmetal;
-    }
-  
-    .tasks-box {
-      flex-grow: 1;
-      text-align: left;
-      display: inline-block;
-      position: relative;
-      padding: 0rem 0rem;
-      // border-radius: 10px;
-      min-width: 325px;
-     }
+    min-width: 325px;
   }
 
 }
-
-
-
-
-
 
 .button-box {
   display: flex;
@@ -217,5 +170,11 @@ button:focus {
 @media only screen and (max-width: 600px) {
   body {
     padding: 0;
+    background: none;
   }
+
+  .container {
+    background: linear-gradient(white, $background);
+  }
+
 }

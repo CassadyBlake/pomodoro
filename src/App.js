@@ -155,8 +155,7 @@ class App extends Component {
         {/* <div className="cross-line"></div> */}
         <span>TIMER</span>
       </div>
-      <div className="main-container">
-        <div className="container col-12">
+      <div className="container col-12">
           <div className="clock-container col-5">
             <div className="controller">
               <div className="display">
@@ -189,25 +188,22 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            {/* <div className="analog"> */}
-                <div className="clock">
-                  <div className={ this.state.currentState !== '- WORKING -' ? "current-state pause" : "current-state"}>{ this.state.currentState }</div>
-                  <div className="start_marker"></div>
-                  <div id ="end_marker" className="end_marker twenty_five"></div>
-                  <div id ="js-minutes" className="clock__tick clock__tick--minutes">
-                  </div>
-                  <div id ="js-seconds" className="clock__tick clock__tick--seconds">
-                  </div>
+              <div className="clock">
+                <div className={ this.state.currentState !== '- WORKING -' ? "current-state pause" : "current-state"}>{ this.state.currentState }</div>
+                <div className="start_marker"></div>
+                <div id ="end_marker" className="end_marker twenty_five"></div>
+                <div id ="js-minutes" className="clock__tick clock__tick--minutes">
                 </div>
-            {/* </div> */}
+                <div id ="js-seconds" className="clock__tick clock__tick--seconds">
+                </div>
+              </div>
           </div>
           
-          <div className="tasks-box col-7">
+          <div className="tasks-container col-7">
             < TaskList
               firebase={firebase}
             />
           </div>
-        </div>
       </div>
     </div>
     );
