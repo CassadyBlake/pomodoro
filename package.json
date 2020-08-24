@@ -2,6 +2,7 @@
   "name": "pomodoro",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://cassadyb.com/pomodoro",
   "dependencies": {
     "buzz": "^1.2.1",
     "firebase": "^5.0.4",
